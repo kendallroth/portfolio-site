@@ -1,0 +1,29 @@
+/*
+ * Default HTML element styles
+ */
+
+@import "vars";
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: $typography-header-1;
+  font-weight: 500;
+}
+h2 {
+  font-size: $typography-header-2;
+  font-weight: 500;
+}
+h3 {
+  font-size: $typography-header-3;
+  font-weight: 500;
+}
+h4 {
+  font-size: $typography-header-4;
+}

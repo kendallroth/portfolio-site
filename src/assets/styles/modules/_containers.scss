@@ -1,0 +1,35 @@
+// Cards
+.card {
+  border-radius: 4px;
+  background-color: white;
+
+  &:not(.is-tile) {
+    border-radius: 4px;
+  }
+}
+
+// Chips
+.chips {
+  display: flex;
+  align-items: center;
+
+  > *:not(:first-child) {
+    margin-left: 8px;
+  }
+}
+
+.chip {
+  display: flex;
+  // Necessary to prevent full-width from flex
+  width: fit-content;
+  padding: 4px 8px;
+  color: white;
+  font-size: 0.8rem;
+  background-color: $theme-secondary;
+  border: 1px solid $theme-secondary;
+  border-radius: 100px;
+
+  > *:not(:first-child) {
+    margin-left: 4px;
+  }
+}

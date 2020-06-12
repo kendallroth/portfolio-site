@@ -1,0 +1,12 @@
+# Redirect http to https
+http://kendallroth.ca/*            https://kendallroth.ca/:splat      301!
+http://www.kendallroth.ca/*        https://kendallroth.ca/:splat      301!
+
+# Redirect from Netlify subdomain to actual app subdomain
+https://kendallroth.netlify.com/*  https://kendallroth.ca/:splat      301!
+
+# Redirect from "bare" domain to "www" subdomain
+https://kendallroth.ca/*           https://www.kendallroth.ca/:splat  301!
+
+# Test redirect file
+https://kendallroth.ca/redirect    https://kendallroth.ca             302!

@@ -1,0 +1,20 @@
+[
+  {
+    "color": "#4da2db",
+    "icon": "analysis",
+    "title": "Analysis",
+    "text": "Careful analysis, including data modeling and project management, is a necessity for project planning and plays a vital role in my work."
+  },
+  {
+    "color": "#d81b60",
+    "icon": "document",
+    "title": "Design",
+    "text": "While not a designer, I do enjoy creating my own content and illustrations while striving to follow a simple and minimalistic approach."
+  },
+  {
+    "color": "#455a64",
+    "icon": "development",
+    "title": "Development",
+    "text": "The whole development cycle—whether front-end, back-end, database, documentation, etc.—all receive the same careful attention to detail."
+  }
+]

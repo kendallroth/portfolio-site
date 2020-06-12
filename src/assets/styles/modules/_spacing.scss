@@ -1,0 +1,46 @@
+$spacings: ("no", 0px), ("auto", "auto"), ("xs", 8px), ("sm", 16px),
+  ("md", 32px), ("lg", 48px), ("xl", 64px);
+
+/**
+ * Generate spacing rules for a direction
+ * @param {string}   type       - Type of rule (margin/padding)
+ * @param {string}   prefix     - Direction prefix
+ * @param {string[]} directions - Directions for rule
+ * @param {string}   name       - Spacing name
+ * @param {number}   number     - Spacing value
+ */
+@mixin generateSpacingRules($type, $prefix, $directions, $spacing) {
+  $spacing-name: nth($spacing, 1);
+  $spacing-value: nth($spacing, 2);
+
+  .#{str-slice($type, 0, 1)}#{$prefix}-#{$spacing-name} {
+    @each $direction in $directions {
+      #{$type}-#{$direction}: #{$spacing-value} !important;
+    }
+  }
+}
+
+/**
+ * Generate spacing classes
+ * @param {string} type    - Type of rule (margin/padding)
+ * @param {Object} spacing - Spacing name/value
+ */
+@mixin generateSpacingClasses($type, $spacing) {
+  @include generateSpacingRules(
+    $type,
+    "a",
+    ("top", "bottom", "left", "right"),
+    $spacing
+  );
+  @include generateSpacingRules($type, "x", ("left", "right"), $spacing);
+  @include generateSpacingRules($type, "y", ("top", "bottom"), $spacing);
+  @include generateSpacingRules($type, "t", ("top"), $spacing);
+  @include generateSpacingRules($type, "b", ("bottom"), $spacing);
+  @include generateSpacingRules($type, "r", ("right"), $spacing);
+  @include generateSpacingRules($type, "l", ("left"), $spacing);
+}
+
+@each $spacing in $spacings {
+  @include generateSpacingClasses("margin", $spacing);
+  @include generateSpacingClasses("padding", $spacing);
+}

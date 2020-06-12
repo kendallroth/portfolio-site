@@ -1,0 +1,142 @@
+@import "@styles/_mixins";
+@import "@styles/_vars";
+
+$button-transition: 0.15s;
+
+
+/**
+ * Generate button sizes (padding, font)
+ */
+@mixin generateSizes() {
+  &,
+  &.is-medium {
+    padding: 8px 16px;
+  }
+
+  &.is-large {
+    padding: 16px 32px;
+  }
+
+  &.is-icon {
+    padding: 6px;
+  }
+}
+
+/**
+ * Generate button colors
+ * @param {string} color - Base color
+ */
+@mixin generateColor($color) {
+  color: white;
+  background-color: $color;
+  
+  &.is-outlined {
+    color: $color;
+    border-color: $color;
+  }
+  
+  &:focus,
+  &.is-focused {
+    box-shadow: 0 0 1px 2px transparentize($color, 0.5);
+  }
+} 
+
+
+// Button groups
+.button-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  & > .button {
+    margin: 0;
+    border-radius: 0;
+    
+    &:first-child {
+      border-radius: 4px 0 0 4px;
+    }
+    &:last-child {
+      border-radius: 0 4px 4px 0;
+    }
+    &:not(:first-child) {
+      border-left: none;
+    }
+    
+    // Move selected button above others to properly show box-shadow
+    &.is-focused,
+    &:focus {
+      z-index: 1;
+    }
+  }
+}
+
+// Buttons
+a.button,
+button.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background-color: white;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color $button-transition, box-shadow $button-transition, color $button-transition;
+
+  // Sizes determine padding, font size, etc
+  @include generateSizes();
+
+  // Coloring styles
+  &,
+  &.is-default {
+    color: $theme-primary;
+    border-color: $theme-primary;
+    &:focus,
+    &.is-focused {
+      box-shadow: 0 0 1px 2px transparentize($theme-primary, 0.5);
+    }
+  }
+  &.is-primary {
+    @include generateColor($theme-primary);
+  }
+  &.is-secondary {
+    @include generateColor($theme-secondary);
+  }
+
+  // Outline styles
+  &.is-outlined {
+    background-color: white;
+  }
+  &.is-default:not(.is-default),
+  &.is-primary:not(.is-outlined),
+  &.is-secondary:not(.is-outlined) {
+    border-color: transparent;
+  }
+
+  // Rounded styles
+  &.is-rounded {
+    border-radius: 100px;
+  }
+
+  // Icon styles
+  &.is-icon {
+    border-radius: 100px;
+  }
+  
+  // Disabled styles
+  &.is-disabled,
+  &[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  // Pseudo state styles
+  &:hover:not(.disabled):not([disabled]) {
+    filter: brightness(0.95);
+  }
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}

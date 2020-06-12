@@ -1,0 +1,14 @@
+# Project dependencies
+node_modules
+.cache/
+
+# Build directory
+dist/
+src/.temp
+
+# OS-specific files
+.DS_Store
+
+# Logging
+*.log
+.cache

@@ -1,0 +1,23 @@
+/**
+ * Generate an aspect ratio class
+ * @param {string} name  - Aspect ratio name
+ * @param {string} ratio - Aspect ratio percentage
+ */
+@mixin generateRatioClass($name, $ratio) {
+  .ratio-#{$name} {
+    &:before {
+      content: "";
+      width: 1px;
+      margin-left: -1px;
+      float: left;
+      height: 0;
+      padding-top: $ratio;
+    }
+
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+}

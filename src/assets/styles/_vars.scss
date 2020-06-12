@@ -1,0 +1,50 @@
+/*
+ * Variables
+ */
+
+// Layout
+$spacing: 8px;
+$layout-navbar-height: 64px;
+
+// Typography
+$typography-header-1: 2.5rem;
+$typography-header-2: 2rem;
+$typography-header-3: 1.5rem;
+$typography-header-4: 1rem;
+$icon-font-size: 1.25em;
+
+// Breakpoints
+$breakpoint-xs: 0;     // Small to large handset
+$breakpoint-sm: 600;   // Small to medium tablet
+$breakpoint-md: 960;   // Large tablet to laptop
+$breakpoint-lg: 1280;  // Desktop
+$breakpoint-xl: 1920;  // 4k and ultra-wide
+
+// Colors
+$color-darken-percent: 10%;
+$color-lighten-percent: 10%;
+
+$color-light: #f5f5f5;
+$color-dark: #363636;
+$color-grey-dark: #4a4a4a;
+$color-grey: #737373;
+$color-grey-light: #b5b5b5;
+
+$color-blue: #298bcc;
+$color-blue-light: lighten($color-blue, $color-lighten-percent);
+$color-blue-dark: darken($color-blue, $color-darken-percent);
+$color-pink: #88034f;
+$color-pink-dark: darken($color-pink, $color-darken-percent);
+$color-pink-light: lighten($color-pink, $color-lighten-percent);
+$color-teal: #038874;
+$color-teal-dark: darken($color-teal, $color-darken-percent);
+$color-teal-light: lighten($color-teal, $color-lighten-percent);
+
+// Theme
+$theme-primary: $color-blue;
+$theme-primary-dark: $color-blue-dark;
+$theme-primary-light: $color-blue-light;
+$theme-secondary: $color-pink;
+$theme-secondary-dark: $color-pink-dark;
+$theme-secondary-light: $color-pink-light;
+

@@ -1,0 +1,71 @@
+// Alignment classes
+.is-aligned-left {
+  text-align: left;
+}
+.is-aligned-center {
+  text-align: center;
+}
+.is-aligned-right {
+  text-align: right;
+}
+
+// Text classes
+.can-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.is-empty {
+  color: $color-grey;
+  font-style: italic;
+}
+
+// Elevation classes
+$elevation-dark: rgba(0, 0, 0, 0.2);
+$elevation-mid: rgba(0, 0, 0, 0.14);
+$elevation-light: rgba(0, 0, 0, 0.12);
+
+.elevation-0 {
+  box-shadow: 0 0 0 0 $elevation-dark, 0 0 0 0 $elevation-mid,
+    0 0 0 0 $elevation-light;
+}
+.elevation-1 {
+  box-shadow: 0 2px 1px -1px $elevation-dark, 0 1px 1px 0 $elevation-mid,
+    0 1px 3px 0 $elevation-light;
+}
+.elevation-2 {
+  box-shadow: 0 3px 1px -2px $elevation-dark, 0 2px 2px 0 $elevation-mid,
+    0 1px 5px 0 $elevation-light;
+}
+.elevation-3 {
+  box-shadow: 0 3px 3px -2px $elevation-dark, 0 3px 4px 0 $elevation-mid,
+    0 1px 8px 0 $elevation-light;
+}
+.elevation-4 {
+  box-shadow: 0 2px 4px -1px $elevation-dark, 0 4px 5px 0 $elevation-mid,
+    0 1px 10px 0 $elevation-light;
+}
+.elevation-5 {
+  box-shadow: 0 3px 5px -1px $elevation-dark, 0 5px 8px 0 $elevation-mid,
+    0 1px 14px 0 $elevation-light;
+}
+.elevation-6 {
+  box-shadow: 0 3px 5px -1px $elevation-dark, 0 6px 10px 0 $elevation-mid,
+    0 1px 18px 0 $elevation-light;
+}
+.elevation-7 {
+  box-shadow: 0 4px 5px -2px $elevation-dark, 0 7px 10px 1px $elevation-mid,
+    0 2px 16px 1px $elevation-light;
+}
+.elevation-8 {
+  box-shadow: 0 5px 5px -3px $elevation-dark, 0 8px 10px 1px $elevation-mid,
+    0 3px 14px 2px $elevation-light;
+}
+.elevation-9 {
+  box-shadow: 0 5px 6px -3px $elevation-dark, 0 9px 12px 1px $elevation-mid,
+    0 3px 16px 2px $elevation-light;
+}
+.elevation-10 {
+  box-shadow: 0 6px 6px -3px $elevation-dark, 0 10px 14px 1px $elevation-mid,
+    0 4px 18px 3px $elevation-light;
+}
