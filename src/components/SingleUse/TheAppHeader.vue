@@ -7,6 +7,7 @@
       src="@assets/icons/logo_light_circle.svg"
       class="header__icon"
       width="64"
+      @click="scrollToTop"
     />
     <nav class="header__right">
       <g-link class="header__link" to="/about/">About</g-link>
@@ -17,6 +18,14 @@
 <script>
 export default {
   name: "TheAppHeader",
+  methods: {
+    scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    },
+  },
 };
 </script>
 
@@ -61,6 +70,12 @@ $header-icon-size: 64px;
   padding: 8px;
   background-color: $theme-primary-light;
   border-radius: 100px;
+  cursor: pointer;
+  transition: all ease 0.2s;
+
+  &:hover {
+    background-color: $theme-primary;
+  }
 }
 
 .header__link {
