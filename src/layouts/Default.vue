@@ -22,8 +22,8 @@ query {
 
 <script>
 // Components
-import TheAppFooter from "@components/SingleUse/TheAppFooter";
-import TheAppHeader from "@components/SingleUse/TheAppHeader";
+import TheAppFooter from "@components/singleUse/TheAppFooter";
+import TheAppHeader from "@components/singleUse/TheAppHeader";
 
 // Utilities
 import config from "@config";

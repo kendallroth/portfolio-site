@@ -2,12 +2,12 @@
   <Layout :headerOffset="false" :includeFooter="false">
     <Hero>
       <div class="page-not-found">
-        <h2 class="page-not-found__title">404</h2>
-        <div class="page-not-found__subtitle">
+        <h2 class="page-not-found__title mb-md">404</h2>
+        <div class="page-not-found__subtitle mb-lg">
           You just hit a page that doesn't exist...yet!
         </div>
         <g-link
-          class="page-not-found__action button is-large is-primary mt-md"
+          class="page-not-found__action button is-large is-primary"
           to="/"
         >
           Go to Home

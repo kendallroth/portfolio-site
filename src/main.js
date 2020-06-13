@@ -8,7 +8,7 @@ import { dateFilter } from "@utilities/filters";
 
 // Components
 import Hover from "@components/Hover";
-import PageSection from "@components/Layout/PageSection";
+import PageSection from "@components/layout/PageSection";
 import DefaultLayout from "@layouts/Default";
 
 // Styles

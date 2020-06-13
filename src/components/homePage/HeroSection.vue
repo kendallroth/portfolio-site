@@ -4,8 +4,8 @@
       <h2 class="hero__title">
         Hi, I'm <span class="is-emphasized">Kendall Roth</span>.
       </h2>
-      <h3 class="hero__subtitle mt-md">I'm a full-stack web developer.</h3>
-      <button class="hero__button mt-lg" @click="$emit('portfolio-click')">
+      <h3 class="hero__subtitle">I'm a full-stack web developer.</h3>
+      <button class="hero__button" @click="$emit('portfolio-click')">
         View My Portfolio<i class="material-icons ml-xs">work</i>
       </button>
     </div>
@@ -29,22 +29,33 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .hero__title {
-  font-size: 3rem;
+  margin-bottom: 24px;
+  font-size: 2rem;
   font-weight: normal;
 
   .is-emphasized {
     font-weight: bold;
     color: #d81b60;
   }
+
+  @include smUp() {
+    font-size: 3rem;
+  }
 }
 
 .hero__subtitle {
-  font-size: 2.25rem;
+  margin-bottom: 36px;
+  font-size: 1.5rem;
   font-weight: normal;
   opacity: 0.75;
+
+  @include smUp() {
+    font-size: 2.25rem;
+  }
 }
 
 .hero__button {

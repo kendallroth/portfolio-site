@@ -22,12 +22,23 @@ function addStyleResource(rule) {
   });
 }
 
+const fileSources = [
+  {
+    use: "@gridsome/source-filesystem",
+    options: {
+      typeName: "Employment",
+      path: "content/employment/*.md",
+    },
+  },
+];
+
 module.exports = {
   siteName,
   siteUrl: "https://kendallroth.ca",
   titleTemplate: "%s",
   icon: "./src/favicon.png",
   plugins: [
+    ...fileSources,
     {
       use: "gridsome-plugin-pwa",
       options: {

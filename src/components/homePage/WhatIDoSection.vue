@@ -28,7 +28,7 @@
 
 <script>
 // Components
-import CircuitBoard from "@components/HomePage/CircuitBoard";
+import CircuitBoard from "./CircuitBoard";
 
 // Utilities
 import whatIDoData from "@/data/whatIDoData.json";
