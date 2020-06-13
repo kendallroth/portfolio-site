@@ -1,6 +1,6 @@
 <template>
   <PageSection class="about-section">
-    <h2 class="section-title">What I Do</h2>
+    <h2 class="section-title mb-sm">What I Do</h2>
     <blockquote class="about-section__quote">
       I‘m passionate about web design and development, focusing on clean and
       simple design/functionality. I strive to be a dedicated team player while
@@ -15,7 +15,7 @@
         <CircuitBoard :color="card.color" class="about-card__icon">
           <g-image
             :alt="card.title"
-            src="@assets/icons/logo_design.svg"
+            :src="require(`@assets/icons/logo_${card.icon}.svg`)"
             class="about-card__icon__image"
           />
         </CircuitBoard>
@@ -47,12 +47,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.about-section {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.about-section__quote {
+  max-width: 875px;
+  padding: 12px 16px;
+  color: $color-grey;
+  font-size: 1.1rem;
+  border-left: 3px solid $color-grey-light;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
 .about-section__cards {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
+  margin-top: 48px;
 
   @include mdUp() {
     flex-direction: row;

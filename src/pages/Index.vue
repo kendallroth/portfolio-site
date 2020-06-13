@@ -47,20 +47,4 @@ export default {
   background-color: black;
   border-top: 3px solid $theme-primary-light;
 }
-
-.about-section {
-  padding-top: 48px;
-  padding-bottom: 48px;
-}
-
-.about-section__quote {
-  max-width: 875px;
-  margin: 24px 0;
-  padding: 12px 16px;
-  color: $color-grey;
-  font-size: 1.1rem;
-  border-left: 3px solid $color-grey-light;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-}
 </style>

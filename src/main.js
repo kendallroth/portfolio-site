@@ -7,6 +7,7 @@ import { breakpointMixin } from "@utilities/breakpoints";
 import { dateFilter } from "@utilities/filters";
 
 // Components
+import Hover from "@components/Hover";
 import PageSection from "@components/Layout/PageSection";
 import DefaultLayout from "@layouts/Default";
 
@@ -14,6 +15,7 @@ import DefaultLayout from "@layouts/Default";
 import "@styles/styles.scss";
 
 export default function (Vue) {
+  Vue.component("Hover", Hover);
   // Set default layout as a global component
   Vue.component("Layout", DefaultLayout);
   Vue.component("PageSection", PageSection);
