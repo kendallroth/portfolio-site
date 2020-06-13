@@ -27,7 +27,27 @@ module.exports = {
   siteUrl: "https://kendallroth.ca",
   titleTemplate: "%s",
   icon: "./src/favicon.png",
-  plugins: [],
+  plugins: [
+    {
+      use: "gridsome-plugin-pwa",
+      options: {
+        title: siteName,
+        shortName: "Kendall Roth",
+        categories: ["portfolio"],
+        lang: "en-US",
+        //startUrl: "/",
+        //display: "standalone",
+        //statusBarStyle: "default",
+        disableServiceWorker: false,
+        //cachedFileTypes: "js,json,css,html,png,jpg,jpeg,svg",
+        themeColor: "#4da2db",
+        backgroundColor: "#ffffff",
+        // Must be provided like "src/favicon.png"
+        icon: "src/favicon.png",
+        // maskableIcon: true,
+      },
+    },
+  ],
   chainWebpack(config) {
     const types = ["vue-modules", "vue", "normal-modules", "normal"];
 

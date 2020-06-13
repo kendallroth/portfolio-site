@@ -4,8 +4,9 @@
       <g-link class="header__link" exact to="/">Home</g-link>
     </nav>
     <g-image
-      src="@assets/icons/logo_light_circle.svg"
+      alt="Logo"
       class="header__icon"
+      src="@assets/icons/logo_light_circle.svg"
       width="64"
       @click="scrollToTop"
     />

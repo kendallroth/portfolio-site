@@ -12,6 +12,7 @@
           :key="icon.name"
           :href="icon.url"
           class="footer__info__icon"
+          rel="noreferrer"
           target="_blank"
         >
           <g-image :alt="icon.name" :src="icon.image" />
@@ -26,6 +27,7 @@
         <a
           class="has-text-gridsome"
           href="https://gridsome.org"
+          rel="noreferrer"
           target="_blank"
         >
           Gridsome
@@ -53,8 +55,8 @@ import gitLabLogo from "@assets/icons/icon_gitlab_light.svg";
 import linkedInLogo from "@assets/icons/icon_linkedin_light.svg";
 
 const socialMediaIcons = [
-  { name: "GitHub", image: gitHubLogo, url: "https://github.com/kendallroth" },
   { name: "GitLab", image: gitLabLogo, url: "https://gitlab.com/kendallroth" },
+  { name: "GitHub", image: gitHubLogo, url: "https://github.com/kendallroth" },
   {
     name: "LinkedIn",
     image: linkedInLogo,
