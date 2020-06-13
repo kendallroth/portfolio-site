@@ -30,6 +30,13 @@ const fileSources = [
       path: "content/employment/*.md",
     },
   },
+  {
+    use: "@gridsome/source-filesystem",
+    options: {
+      typeName: "Project",
+      path: "content/projects/*.md",
+    },
+  },
 ];
 
 module.exports = {

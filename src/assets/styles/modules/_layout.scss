@@ -36,4 +36,5 @@ $columns: 12;
 }
 
 //  Ratio helper classes
-@include generateRatioClass("1by1", 100%);
+@include generateRatioClass(1, 1);
+@include generateRatioClass(3, 2);

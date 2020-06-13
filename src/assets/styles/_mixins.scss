@@ -1,17 +1,17 @@
 /**
  * Generate an aspect ratio class
- * @param {string} name  - Aspect ratio name
- * @param {string} ratio - Aspect ratio percentage
+ * @param {number} width  - Width of aspect ratio
+ * @param {number} height - Height of aspect ratio
  */
-@mixin generateRatioClass($name, $ratio) {
-  .ratio-#{$name} {
+@mixin generateRatioClass($width, $height) {
+  .ratio-#{$width}by#{$height} {
     &:before {
       content: "";
       width: 1px;
       margin-left: -1px;
       float: left;
       height: 0;
-      padding-top: $ratio;
+      padding-top: calc(#{$height} / #{$width} * 100%);
     }
 
     &:after {

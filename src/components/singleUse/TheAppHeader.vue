@@ -20,6 +20,9 @@
 export default {
   name: "TheAppHeader",
   methods: {
+    /**
+     * Scroll to the top of the website
+     */
     scrollToTop() {
       window.scrollTo({
         top: 0,

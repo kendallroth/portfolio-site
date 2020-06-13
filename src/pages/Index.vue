@@ -32,14 +32,21 @@
       </div>
     </PageSection>
 
+    <PageSection class="projects-section py-lg">
+      <h2 class="section-title mb-md">What I've Done</h2>
+      <div class="projects-section__cards">
+        <ProjectCard
+          v-for="project in projectCards"
+          :key="project.name"
+          :project="project"
+        />
+      </div>
+    </PageSection>
+
     <PageSection class="employment-section" size="sm-10 md-8 lg-6">
       <h2 class="section-title mb-md">Where I've Worked</h2>
       <div class="employment-section__cards">
-        <EmploymentCard
-          v-for="job in employmentJobs"
-          :key="job.title"
-          :job="job"
-        />
+        <EmploymentCard v-for="job in jobCards" :key="job.title" :job="job" />
       </div>
     </PageSection>
   </Layout>
@@ -47,7 +54,19 @@
 
 <page-query>
 query {
-  employment: allEmployment(
+  projects: allProject(
+    filter: { published: { eq: true } }
+    sort: { by: "year", order: DESC }
+  ) {
+    edges {
+      node {
+        image(width: 500, quality: 90)
+        name
+        year
+      }
+    }
+  }
+  jobs: allEmployment(
     filter: {
     published: { eq: true }
   }, sort: {
@@ -59,7 +78,7 @@ query {
         id
         title
         position
-        logo(width: 50)
+        logo(width: 50, quality: 90)
         dates {
           start(format: "yyyy MMM")
           end(format: "yyyy MMM")
@@ -72,9 +91,10 @@ query {
 
 <script>
 // Components
+import Hero from "@components/Hero";
 import AboutMeCard from "@components/homePage/AboutMeCard";
 import EmploymentCard from "@components/homePage/EmploymentCard";
-import Hero from "@components/Hero";
+import ProjectCard from "@components/homePage/ProjectCard";
 
 // Utilities
 import whatIDoData from "@/data/whatIDoData.json";
@@ -85,17 +105,25 @@ export default {
     AboutMeCard,
     EmploymentCard,
     Hero,
+    ProjectCard,
   },
   computed: {
     aboutMeCards() {
       return whatIDoData;
     },
-    employmentJobs() {
-      const jobEdges = this.$page.employment.edges;
-      return jobEdges.map(({ node }) => ({ ...node }));
+    jobCards() {
+      const jobEdges = this.$page.jobs.edges;
+      return jobEdges.map(({ node }) => node);
+    },
+    projectCards() {
+      const projectEdges = this.$page.projects.edges;
+      return projectEdges.map(({ node }) => node);
     },
   },
   methods: {
+    /**
+     * Scroll to the portfolio section
+     */
     scrollToPortfolio() {
       const element = this.$refs.firstSectionRef;
       if (!element) return;
@@ -115,6 +143,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$project-card-margin: 16px;
+
 // Hero section
 .hero__content {
   display: flex;
@@ -207,6 +237,47 @@ export default {
     @include mdUp() {
       margin-top: 0;
       margin-left: 16px;
+    }
+  }
+}
+
+// Projects section
+.projects-section {
+  background-color: $theme-primary;
+  color: white;
+}
+
+.projects-section__cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: black;
+
+  @include smUp() {
+    margin: -$project-card-margin;
+    flex-direction: row;
+    //align-items: stretch;
+    flex-wrap: wrap;
+  }
+
+  > * {
+    max-width: 500px;
+    width: 100%;
+
+    @include xsOnly() {
+      &:not(:first-child) {
+        margin-top: calc(#{$project-card-margin} * 1.5);
+      }
+    }
+
+    @include smUp() {
+      margin: $project-card-margin;
+      width: calc(100% / 2 - #{$project-card-margin * 2});
+    }
+
+    @include lgUp() {
+      // width: calc(100% / 3 - #{$project-card-margin * 2});
     }
   }
 }
