@@ -46,6 +46,15 @@
     <PageSection class="employment-section" size="sm-10 md-8 lg-6">
       <h2 class="section-title mb-md">Where I've Worked</h2>
       <div class="employment-section__cards">
+        <EmploymentCard
+          :job="{
+            name: '[ Your Name ]',
+            position: '[ Interesting Title ]',
+            dates: { start: '?', end: '?' },
+          }"
+          placeholder
+        />
+        <hr class="employment-section__divider" />
         <EmploymentCard v-for="job in jobCards" :key="job.title" :job="job" />
       </div>
     </PageSection>
@@ -60,7 +69,7 @@ query {
   ) {
     edges {
       node {
-        image(width: 500, quality: 90)
+        image(width: 500)
         name
         year
       }
@@ -76,9 +85,9 @@ query {
     edges {
       node {
         id
-        title
+        name
         position
-        logo(width: 50, quality: 90)
+        logo(width: 50)
         dates {
           start(format: "yyyy MMM")
           end(format: "yyyy MMM")
@@ -143,6 +152,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$employment-card-margin: 24px;
 $project-card-margin: 16px;
 
 // Hero section
@@ -257,7 +267,6 @@ $project-card-margin: 16px;
   @include smUp() {
     margin: -$project-card-margin;
     flex-direction: row;
-    //align-items: stretch;
     flex-wrap: wrap;
   }
 
@@ -317,7 +326,14 @@ $project-card-margin: 16px;
   width: 100%;
 
   > .employment-card:not(:first-child) {
-    margin-top: 24px;
+    margin-top: $employment-card-margin;
   }
+}
+
+.employment-section__divider {
+  $offset: $employment-card-margin;
+  margin: #{$offset} -#{$offset} 0 -#{$offset / 2};
+  width: calc(100% + #{$offset});
+  background-color: transparentize(white, 0.25);
 }
 </style>

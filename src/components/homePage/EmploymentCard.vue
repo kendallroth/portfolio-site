@@ -1,29 +1,32 @@
 <template>
-  <Hover v-slot="{ hover }">
-    <div
-      :class="{ 'elevation-5': hover }"
-      class="employment-card card elevation-3"
-    >
-      <div class="employment-card__logo">
-        <g-image :alt="`${job.title} Logo`" :src="job.logo" />
+  <div :class="{ 'is-placeholder': placeholder }" class="employment-card card">
+    <div class="employment-card__logo ratio-1by1">
+      <g-image v-if="job.logo" :alt="`${job.title} Logo`" :src="job.logo" />
+      <div v-else class="employment-card__logo-placeholder" />
+    </div>
+    <div class="employment-card__collapse">
+      <div class="employment-card__titles">
+        <div class="employment-card__name">{{ job.name }}</div>
+        <div class="employment-card__position">{{ job.position }}</div>
       </div>
-      <div class="employment-card__collapse">
-        <div class="employment-card__titles">
-          <div class="employment-card__title">{{ job.title }}</div>
-          <div class="employment-card__subtitle">{{ job.position }}</div>
-        </div>
-        <div class="employment-card__dates">
-          {{ job.dates.start }} &ndash; {{ job.dates.end || "Present" }}
-        </div>
+      <div class="employment-card__dates">
+        {{ job.dates.start }} &ndash; {{ job.dates.end || "Present" }}
       </div>
     </div>
-  </Hover>
+  </div>
 </template>
 
 <script>
 export default {
   name: "EmploymentCard",
   props: {
+    /**
+     * Whether the card is a placeholder
+     */
+    placeholder: {
+      type: Boolean,
+      default: false,
+    },
     /**
      * Job details
      */
@@ -36,18 +39,45 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$logo-size: 50px;
+
 .employment-card {
   display: flex;
   align-items: center;
   padding: 12px 16px;
   color: black;
   transition: box-shadow 0.2s ease;
+  @include elevate(3);
+
+  &:not(.is-placeholder):hover {
+    @include elevate(5);
+  }
+
+  &.is-placeholder {
+    color: white;
+    background-color: rgba(200, 200, 200, 0.5);
+    cursor: not-allowed;
+
+    * {
+      color: white !important;
+    }
+  }
 
   .employment-card__logo {
-    max-width: 50px;
-    max-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $logo-size;
+    height: $logo-size;
     margin-right: 16px;
     flex-shrink: 0;
+
+    .employment-card__logo-placeholder {
+      width: 100%;
+      height: 100%;
+      border: 2px dashed white;
+      border-radius: 4px;
+    }
   }
 
   // Collapse titles and dates on smaller screens
@@ -67,12 +97,12 @@ export default {
     margin-right: auto;
   }
 
-  .employment-card__title {
-    font-size: 1.1rem;
-    font-weight: 500;
+  .employment-card__name {
+    font-size: 1.25rem;
+    font-weight: bold;
   }
 
-  .employment-card__subtitle {
+  .employment-card__position {
     font-size: 0.9rem;
     font-weight: 300;
     color: $color-dark;
@@ -81,7 +111,6 @@ export default {
   .employment-card__dates {
     font-size: 0.9rem;
     font-weight: 300;
-    font-style: italic;
     color: $color-grey-dark;
   }
 }

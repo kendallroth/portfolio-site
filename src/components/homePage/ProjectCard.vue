@@ -1,19 +1,14 @@
 <template>
-  <Hover v-slot="{ hover }">
-    <div
-      :class="{ 'elevation-5': hover }"
-      class="project-card card elevation-3"
-    >
-      <div class="project-card__image ratio-3by2">
-        <g-image :alt="project.name" :src="project.image.src" />
-      </div>
-      <div class="project-card__description">
-        <span class="project-card__name">{{ project.name }}</span>
-        <span class="mx-xxs">&ndash;</span>
-        <span class="project-card__date">{{ project.year }}</span>
-      </div>
+  <div class="project-card card">
+    <div class="project-card__image ratio-3by2">
+      <g-image :alt="project.name" :src="project.image.src" />
     </div>
-  </Hover>
+    <div class="project-card__description">
+      <span class="project-card__name">{{ project.name }}</span>
+      <span class="mx-xxs">&ndash;</span>
+      <span class="project-card__date">{{ project.year }}</span>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -33,7 +28,13 @@ export default {
   display: flex;
   flex-direction: column;
   padding: 4px;
-  transition: box-shadow 0.2s ease;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  @include elevate(3);
+
+  &:hover {
+    transform: scale(1.025);
+    @include elevate(5);
+  }
 }
 
 .project-card__image {

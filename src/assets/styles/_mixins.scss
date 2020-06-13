@@ -1,3 +1,5 @@
+@import "vars";
+
 /**
  * Generate an aspect ratio class
  * @param {number} width  - Width of aspect ratio
@@ -20,4 +22,12 @@
       clear: both;
     }
   }
+}
+
+/**
+ * Elevate an element with a box shadow
+ * @param {number} height - Height to elevate
+ */
+@mixin elevate($height) {
+  box-shadow: nth($elevations, $height + 1);
 }

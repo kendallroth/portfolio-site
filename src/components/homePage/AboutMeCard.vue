@@ -1,17 +1,15 @@
 <template>
-  <Hover v-slot="{ hover }">
-    <div :class="{ 'elevation-5': hover }" class="about-card card elevation-3">
-      <CircuitBoard :color="details.color" class="about-card__icon">
-        <g-image
-          :alt="details.title"
-          :src="require(`@assets/icons/logo_${details.icon}.svg`)"
-          class="about-card__icon__image"
-        />
-      </CircuitBoard>
-      <div class="about-card__title">{{ details.title }}</div>
-      <div class="about-card__text">{{ details.text }}</div>
-    </div>
-  </Hover>
+  <div class="about-card card">
+    <CircuitBoard :color="details.color" class="about-card__icon">
+      <g-image
+        :alt="details.title"
+        :src="require(`@assets/icons/logo_${details.icon}.svg`)"
+        class="about-card__icon__image"
+      />
+    </CircuitBoard>
+    <div class="about-card__title">{{ details.title }}</div>
+    <div class="about-card__text">{{ details.text }}</div>
+  </div>
 </template>
 
 <script>
@@ -43,6 +41,11 @@ export default {
   max-width: 350px;
   padding: 16px;
   transition: box-shadow 0.2s ease;
+  @include elevate(3);
+
+  &:hover {
+    @include elevate(4);
+  }
 
   .about-card__icon {
     margin-bottom: 16px;
