@@ -48,6 +48,9 @@
       <div class="skills-section__cards">
         <SkillCard v-for="skill in skillCards" :key="skill.id" :skill="skill" />
       </div>
+      <div class="skills-section__other">
+        * I have also experimented with Android, Auth0, and a few others.
+      </div>
     </PageSection>
 
     <PageSection class="employment-section" size="sm-10 md-8 lg-6">
@@ -110,7 +113,7 @@ query {
         image
         name
         rating
-        use
+        tags
       }
     }
   }
@@ -365,6 +368,13 @@ $skill-card-margin: 8px;
       width: calc(100% / 4 - #{$skill-card-margin * 2});
     }
   }
+}
+
+.skills-section__other {
+  margin-top: 24px;
+  color: $theme-secondary-dark;
+  font-weight: 300;
+  text-align: center;
 }
 
 // Employment section

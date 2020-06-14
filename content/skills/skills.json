@@ -5,105 +5,112 @@
       "description": "",
       "image": "javascript",
       "rating": 95,
-      "use": 5
+      "tags": ["web"]
     },
     {
       "name": "VueJS",
       "description": "",
       "image": "vue",
       "rating": 90,
-      "use": 5
+      "tags": ["web"]
     },
     {
       "name": "CSS / SCSS",
       "description": "",
       "image": "scss",
       "rating": 95,
-      "use": 5
+      "tags": ["web"]
     },
     {
       "name": "GitLab",
       "description": "",
       "image": "gitlab",
       "rating": 90,
-      "use": 4
+      "tags": ["management"]
     },
     {
       "name": "React",
       "description": "",
       "image": "react",
       "rating": 90,
-      "use": 5
+      "tags": ["web"]
     },
     {
       "name": "Git",
       "description": "",
       "image": "git",
       "rating": 80,
-      "use": 5
+      "tags": ["management"]
     },
     {
       "name": "GraphQL",
       "description": "",
       "image": "graphql",
       "rating": 80,
-      "use": 4
+      "tags": ["data"]
     },
     {
       "name": "Node",
       "description": "",
       "image": "node",
       "rating": 75,
-      "use": 5
+      "tags": ["scripting"]
     },
     {
       "name": "Unity",
       "description": "",
       "image": "unity",
       "rating": 65,
-      "use": 4
+      "tags": ["game"]
     },
     {
       "name": "PostgreSQL",
       "description": "",
       "image": "postgres",
       "rating": 80,
-      "use": 4
+      "tags": ["data"]
+    },
+    {
+      "name": "Affinity",
+      "description": "",
+      "image": "affinity",
+      "rating": 90,
+      "tags": ["design"]
+    },
+    {
+      "name": "Netlify",
+      "description": "",
+      "image": "netlify",
+      "rating": 80,
+      "tags": ["devops"]
     },
     {
       "name": "C#",
       "description": "",
       "image": "csharp",
       "rating": 75,
-      "use": 4
+      "tags": ["traditional"]
     },
     {
       "name": "Java",
       "description": "",
       "image": "java",
       "rating": 45,
-      "use": 2
+      "tags": ["traditional"]
     },
     {
       "name": "Docker",
       "description": "",
       "image": "docker",
       "rating": 40,
-      "use": 3
-    },
-    {
-      "name": "Android",
-      "description": "",
-      "image": "android",
-      "rating": 30,
-      "use": 1
+      "tags": ["management"]
     },
     {
       "name": "Python",
       "description": "",
       "image": "python",
       "rating": 45,
-      "use": 2
+      "tags": ["scripting"]
     }
   ]
 }

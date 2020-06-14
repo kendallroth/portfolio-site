@@ -20,6 +20,6 @@ module.exports = {
   plugins: ["vue"],
   rules: {
     "no-unused-vars": "warn",
-    "prettier/prettier": "warn",
+    "prettier/prettier": ["warn", { endOfLine: "auto" }],
   },
 };
