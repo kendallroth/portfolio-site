@@ -43,8 +43,11 @@
       </div>
     </PageSection>
 
-    <PageSection class="skills-section py-lg">
+    <PageSection class="skills-section py-lg" size="lg-10">
       <h2 class="section-title mb-md">What I've Worked With</h2>
+      <div class="skills-section__cards">
+        <SkillCard v-for="skill in skillCards" :key="skill.id" :skill="skill" />
+      </div>
     </PageSection>
 
     <PageSection class="employment-section" size="sm-10 md-8 lg-6">
@@ -67,18 +70,6 @@
 
 <page-query>
 query {
-  projects: allProject(
-    filter: { published: { eq: true } }
-    sort: { by: "year", order: DESC }
-  ) {
-    edges {
-      node {
-        image(width: 500)
-        name
-        year
-      }
-    }
-  }
   jobs: allEmployment(
     filter: {
     published: { eq: true }
@@ -99,6 +90,30 @@ query {
       }
     }
   }
+  projects: allProject(
+    filter: { published: { eq: true } }
+    sort: { by: "year", order: DESC }
+  ) {
+    edges {
+      node {
+        image(width: 500)
+        name
+        year
+      }
+    }
+  }
+  skills: allSkill {
+    edges {
+      node {
+        id
+        description
+        image
+        name
+        rating
+        use
+      }
+    }
+  }
 }
 </page-query>
 
@@ -108,6 +123,7 @@ import Hero from "@components/Hero";
 import AboutMeCard from "@components/homePage/AboutMeCard";
 import EmploymentCard from "@components/homePage/EmploymentCard";
 import ProjectCard from "@components/homePage/ProjectCard";
+import SkillCard from "@components/homePage/SkillCard";
 
 // Utilities
 import whatIDoData from "@/data/whatIDoData.json";
@@ -119,6 +135,7 @@ export default {
     EmploymentCard,
     Hero,
     ProjectCard,
+    SkillCard,
   },
   computed: {
     aboutMeCards() {
@@ -131,6 +148,10 @@ export default {
     projectCards() {
       const projectEdges = this.$page.projects.edges;
       return projectEdges.map(({ node }) => node);
+    },
+    skillCards() {
+      const skillEdges = this.$page.skills.edges;
+      return skillEdges.map(({ node }) => node);
     },
   },
   methods: {
@@ -158,6 +179,11 @@ export default {
 <style lang="scss" scoped>
 $employment-card-margin: 24px;
 $project-card-margin: 16px;
+$skill-card-margin: 8px;
+
+.section-title {
+  text-align: center;
+}
 
 // Hero section
 .hero__content {
@@ -283,8 +309,8 @@ $project-card-margin: 16px;
   }
 
   > * {
-    max-width: 500px;
     width: 100%;
+    max-width: 500px;
 
     @include xsOnly() {
       &:not(:first-child) {
@@ -299,6 +325,44 @@ $project-card-margin: 16px;
 
     @include lgUp() {
       // width: calc(100% / 3 - #{$project-card-margin * 2});
+    }
+  }
+}
+
+// Skills section
+.skills-section__cards {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @include xsOnly {
+    background-color: white;
+    border-radius: 4px;
+    overflow: hidden;
+
+    @include elevate(2);
+  }
+
+  @include smUp {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: -$skill-card-margin;
+  }
+
+  > * {
+    @include xsOnly {
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    @include smUp() {
+      margin: $skill-card-margin;
+      width: calc(100% / 3 - #{$skill-card-margin * 2});
+    }
+
+    @include mdUp() {
+      margin: $skill-card-margin;
+      width: calc(100% / 4 - #{$skill-card-margin * 2});
     }
   }
 }

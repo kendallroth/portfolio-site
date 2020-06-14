@@ -5,6 +5,7 @@ const path = require("path");
 
 const Paths = {
   src: path.join(__dirname, "src"),
+  root: __dirname,
   styles: path.join(__dirname, "src", "assets", "styles"),
 };
 
@@ -83,6 +84,7 @@ module.exports = {
             "@assets": path.join(Paths.src, "assets"),
             "@config": path.join(Paths.src, "../config.js"),
             "@components": path.join(Paths.src, "components"),
+            "@content": path.join(Paths.root, "content"),
             "@layouts": path.join(Paths.src, "layouts"),
             "@pages": path.join(Paths.src, "pages"),
             "@styles": path.join(Paths.src, "assets", "styles"),
