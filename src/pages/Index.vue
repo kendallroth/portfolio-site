@@ -43,6 +43,10 @@
       </div>
     </PageSection>
 
+    <PageSection class="skills-section py-lg">
+      <h2 class="section-title mb-md">What I've Worked With</h2>
+    </PageSection>
+
     <PageSection class="employment-section" size="sm-10 md-8 lg-6">
       <h2 class="section-title mb-md">Where I've Worked</h2>
       <div class="employment-section__cards">
@@ -255,6 +259,14 @@ $project-card-margin: 16px;
 .projects-section {
   background-color: $theme-primary;
   color: white;
+
+  @include skewBackground("top-right", 3, 70%);
+  @include skewBackground("bottom-left", 3, 70%);
+
+  @include smUp() {
+    @include skewBackground("top-right", 1, 70%);
+    @include skewBackground("bottom-left", 1, 70%);
+  }
 }
 
 .projects-section__cards {
@@ -293,29 +305,15 @@ $project-card-margin: 16px;
 
 // Employment section
 .employment-section {
-  position: relative;
   padding-top: 48px;
   padding-bottom: 48px;
   color: white;
   background-color: #26a69a;
 
-  &:before {
-    display: block;
-    content: "";
-    height: 50%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: -1;
-    transform: skewY(-3deg);
-    transform-origin: 0 0;
-    opacity: 70%;
-    background: inherit;
+  @include skewBackground("top-right", 3, 70%);
 
-    @include smUp() {
-      transform: skewY(-1deg);
-    }
+  @include smUp() {
+    @include skewBackground("top-right", 1, 70%);
   }
 }
 

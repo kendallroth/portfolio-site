@@ -1,6 +1,14 @@
 @import "vars";
 
 /**
+ * Elevate an element with a box shadow
+ * @param {number} height - Height to elevate
+ */
+@mixin elevate($height) {
+  box-shadow: nth($elevations, $height + 1);
+}
+
+/**
  * Generate an aspect ratio class
  * @param {number} width  - Width of aspect ratio
  * @param {number} height - Height of aspect ratio
@@ -25,9 +33,49 @@
 }
 
 /**
- * Elevate an element with a box shadow
- * @param {number} height - Height to elevate
+ * Skew a background to produce a triangle jutting above
+ * @param {string} direction - Direction to skew (where skew is most visible)
+ * @param {number} degrees   - Degrees to skew
+ * @param {number} opacity   - Skewed area opacity (of main background)
  */
-@mixin elevate($height) {
-  box-shadow: nth($elevations, $height + 1);
+@mixin skewBackground($direction: "top-left", $degrees: 1, $opacity: 70%) {
+  position: relative;
+
+  // Use ":before" and ":after" selector depending on direction
+  $selector: if(
+    $direction == "top-left" or $direction == "top-right",
+    before,
+    after
+  );
+
+  &:#{$selector} {
+    display: block;
+    content: "";
+    height: 50%;
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: -1;
+    opacity: $opacity;
+    background: inherit;
+
+    @if $direction == "top-left" {
+      top: 0;
+      transform-origin: top right;
+    } @else if $direction == "top-right" {
+      top: 0;
+      transform-origin: top left;
+      $degrees: -$degrees;
+    } @else if $direction == "bottom-left" {
+      bottom: 0;
+      transform-origin: bottom right;
+      $degrees: -$degrees;
+    } @else if $direction == "bottom-right" {
+      bottom: 0;
+      transform-origin: bottom left;
+    }
+
+    // NOTE: Must set after to allow negating degrees
+    transform: skewY(#{$degrees}deg);
+  }
 }
