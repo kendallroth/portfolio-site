@@ -289,12 +289,12 @@ $skill-card-margin: 8px;
   background-color: $theme-primary;
   color: white;
 
-  @include skewBackground("top-right", 3, 70%);
-  @include skewBackground("bottom-left", 3, 70%);
+  @include skewBackground("top-right", 3);
+  @include skewBackground("bottom-left", 3);
 
   @include smUp() {
-    @include skewBackground("top-right", 1, 70%);
-    @include skewBackground("bottom-left", 1, 70%);
+    @include skewBackground("top-right", 1);
+    @include skewBackground("bottom-left", 1);
   }
 }
 
