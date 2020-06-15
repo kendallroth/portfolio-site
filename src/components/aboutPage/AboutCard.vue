@@ -83,7 +83,7 @@ $about-card-padding: 16px;
 .about-card__title {
   margin-bottom: 4px;
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: 500;
   line-height: 1;
 }
 
@@ -113,6 +113,7 @@ $about-card-padding: 16px;
 </style>
 
 <style lang="scss">
+// NOTE: Several styles require non-scoped rules (for v-html)
 .about-card__content {
   font-size: 0.9rem;
 
