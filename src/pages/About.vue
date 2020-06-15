@@ -3,11 +3,12 @@
     <PageSection class="py-lg" size="sm-10 md-8">
       <div class="about-cards">
         <AboutCard
-          v-for="card in aboutCards"
+          v-for="(card, idx) in aboutCards"
           :key="card.title"
           :caption="card.caption"
           :html="card.content"
           :icon="card.icon"
+          :primary="idx == 0"
           :title="card.title"
         />
       </div>
@@ -54,15 +55,8 @@ export default {
 
 <style lang="scss" scoped>
 .about-cards {
-  width: 100%;
-
   > *:not(:first-child) {
     margin-top: 32px;
-
-    @include smUp() {
-      width: auto;
-      margin: 32px 16px 0 16px;
-    }
   }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
-  <div class="about-card card">
-    <div class="about-card__header">
+  <div :class="{ 'is-primary': primary }" class="about-card card">
+    <div class="about-card__header elevation-2">
       <i class="about-card__icon material-icons">{{ icon }}</i>
       <div class="about-card__titles">
         <h2 class="about-card__title">
@@ -14,7 +14,6 @@
         </div>
       </div>
     </div>
-    <hr class="about-card__divider" />
     <div v-if="$slots.default" class="about-card__content">
       <slot name="default" />
     </div>
@@ -26,6 +25,10 @@
 export default {
   name: "AboutCard",
   props: {
+    caption: {
+      type: String,
+      required: true,
+    },
     html: {
       type: String,
       required: false,
@@ -34,11 +37,12 @@ export default {
       type: String,
       required: true,
     },
-    title: {
-      type: String,
-      required: true,
+    primary: {
+      type: Boolean,
+      required: false,
+      default: false,
     },
-    caption: {
+    title: {
       type: String,
       required: true,
     },
@@ -53,16 +57,22 @@ $about-card-padding: 16px;
   display: flex;
   flex-direction: column;
   width: 100%;
+  overflow: hidden;
   transition: box-shadow 0.2s ease;
+
+  &.is-primary {
+    margin: 0;
+  }
 
   @include elevate(3);
 
   &:hover {
     @include elevate(4);
+  }
 
-    .about-card__icon {
-      color: darken($theme-primary-dark, 5%);
-    }
+  @include smUp() {
+    width: auto;
+    margin: 0 16px;
   }
 }
 
@@ -70,14 +80,14 @@ $about-card-padding: 16px;
   display: flex;
   align-items: center;
   padding: $about-card-padding;
+  color: white;
+  background-color: $theme-primary-dark;
 }
 
 .about-card__icon {
   margin-right: $about-card-padding;
-  color: $theme-primary-dark;
   font-size: 48px;
   line-height: 1;
-  transition: color 0.2s ease;
 }
 
 .about-card__title {
@@ -91,15 +101,8 @@ $about-card-padding: 16px;
   font-size: 0.9rem;
 
   .about-card__subtitle__prefix {
-    color: $theme-primary-dark;
+    font-weight: 500;
   }
-}
-
-.about-card__divider {
-  width: auto;
-  height: 2px;
-  margin: 0 $about-card-padding;
-  background-color: $theme-secondary;
 }
 
 .about-card__content {
