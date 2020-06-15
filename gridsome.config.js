@@ -27,6 +27,13 @@ const fileSources = [
   {
     use: "@gridsome/source-filesystem",
     options: {
+      typeName: "AboutMe",
+      path: "content/about/*.md",
+    },
+  },
+  {
+    use: "@gridsome/source-filesystem",
+    options: {
       typeName: "Employment",
       path: "content/employment/*.md",
     },
