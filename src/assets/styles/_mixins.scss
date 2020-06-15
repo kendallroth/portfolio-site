@@ -38,7 +38,7 @@
  * @param {number} degrees   - Degrees to skew
  * @param {number} opacity   - Skewed area opacity (of main background)
  */
-@mixin skewBackground($direction: "top-left", $degrees: 1, $opacity: 70%) {
+@mixin skewBackground($direction: "top-left", $degrees: 1, $opacity: 10%) {
   position: relative;
 
   // Use ":before" and ":after" selector depending on direction
@@ -56,7 +56,7 @@
     right: 0;
     left: 0;
     z-index: -1;
-    opacity: $opacity;
+    opacity: 70%;
     background: inherit;
 
     @if $direction == "top-left" {
