@@ -384,10 +384,10 @@ $skill-card-margin: 8px;
   color: white;
   background-color: #26a69a;
 
-  @include skewBackground("top-right", 3, 70%);
+  @include skewBackground("top-right", 3);
 
   @include smUp() {
-    @include skewBackground("top-right", 1, 70%);
+    @include skewBackground("top-right");
   }
 }
 
