@@ -15,7 +15,7 @@
         <a
           :href="project.link"
           class="project__link"
-          noreferrer
+          rel="noreferrer"
           target="_blank"
         >
           <i class="material-icons mr-xs">open_in_new</i>
