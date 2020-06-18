@@ -1,12 +1,12 @@
 ---
-collaborators:
-  - doug-epp
-  - tristan-freitas
 image: ./images/capstone.png
 name: Capstone Project
+link:
 published: true
 slug: capstone
 status: Completed
+tags: [web, react, nodejs, sendgrid, mysql]
+type: Web App
 year: 2018
 ---
 

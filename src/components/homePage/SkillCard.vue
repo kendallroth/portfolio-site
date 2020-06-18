@@ -7,8 +7,8 @@
       <div class="skill-card__name">
         {{ skill.name }}
       </div>
-      <div class="skill-card__tags">
-        <span v-for="tag in skill.tags" :key="tag" class="skill-card__tag">
+      <div class="tags">
+        <span v-for="tag in skill.tags" :key="tag" class="tag">
           {{ tag }}
         </span>
       </div>
@@ -70,17 +70,6 @@ export default {
 .skill-card__name {
   font-weight: bold;
   margin-bottom: 4px;
-}
-
-.skill-card__tags {
-  font-size: 0.8rem;
-}
-
-.skill-card__tag {
-  padding: 3px 6px;
-  border-radius: 4px;
-  border: 1px solid transparentize($theme-secondary, 0.8);
-  background-color: transparentize($theme-secondary, 0.95);
 }
 
 .skill-card__rating {

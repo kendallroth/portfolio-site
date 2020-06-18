@@ -8,28 +8,21 @@
   }
 }
 
-// Chips
-.chips {
+// Tags
+.tags {
   display: flex;
   align-items: center;
+  font-size: 0.8rem;
 
-  > *:not(:first-child) {
+  > .tag:not(:first-child) {
     margin-left: 8px;
   }
 }
 
-.chip {
-  display: flex;
-  // Necessary to prevent full-width from flex
-  width: fit-content;
-  padding: 4px 8px;
-  color: white;
-  font-size: 0.8rem;
-  background-color: $theme-secondary;
-  border: 1px solid $theme-secondary;
-  border-radius: 100px;
-
-  > *:not(:first-child) {
-    margin-left: 4px;
-  }
+.tag {
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid transparentize($theme-secondary, 0.8);
+  background-color: transparentize($theme-secondary, 0.95);
+  user-select: none;
 }

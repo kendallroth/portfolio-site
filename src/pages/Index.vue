@@ -95,12 +95,15 @@ query {
   }
   projects: allProject(
     filter: { published: { eq: true } }
-    sort: { by: "year", order: DESC }
+    sort: [{ by: "year", order: DESC }, { by: "status", order: ASC }]
   ) {
     edges {
       node {
         image(width: 500)
+        link
         name
+        slug
+        type
         year
       }
     }
@@ -327,7 +330,7 @@ $skill-card-margin: 8px;
     }
 
     @include lgUp() {
-      // width: calc(100% / 3 - #{$project-card-margin * 2});
+      width: calc(100% / 3 - #{$project-card-margin * 2});
     }
   }
 }

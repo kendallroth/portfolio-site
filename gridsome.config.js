@@ -74,6 +74,9 @@ module.exports = {
       },
     },
   ],
+  templates: {
+    Project: "/project/:slug",
+  },
   chainWebpack(config) {
     const types = ["vue-modules", "vue", "normal-modules", "normal"];
 
