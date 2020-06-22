@@ -3,7 +3,8 @@
     <PageSection size="md-10 lg-8">
       <h2 class="project__title mt-sm mb-xs">{{ project.name }}</h2>
       <h3 class="project__subtitle mb-sm">
-        {{ project.year }}&thinsp;&ndash;&thinsp;{{ project.type | capitalize }}
+        {{ project.date | formatDate("yyyy") }}&thinsp;&ndash;&thinsp;
+        {{ project.type | capitalize }}
       </h3>
       <div class="project__image">
         <g-image
@@ -19,7 +20,7 @@
           target="_blank"
         >
           <i class="material-icons mr-xs">open_in_new</i>
-          <span>View</span>
+          <span>Visit</span>
         </a>
       </div>
       <div class="project__tags tags mt-sm">
@@ -36,12 +37,12 @@
 query ($id: ID!) {
   project: project(id: $id) {
     content
+    date
     image(width: 800, height: 600, quality: 90)
     link
     name
     tags
     type
-    year
   }
 }
 </page-query>
@@ -94,21 +95,38 @@ export default {
 <style lang="scss">
 // NOTE: Unscoped SCSS is necessary for v-html
 .project__html {
-  h2 {
-    margin-top: 24px;
-  }
-
-  > p,
-  > blockquote {
-    margin-bottom: 16px;
-  }
-
   blockquote {
     margin: 0;
     padding: 4px 4px 4px 16px;
     font-weight: 300;
     border-left: 4px solid $theme-primary-dark;
     border-radius: 4px 0 0 4px;
+  }
+
+  dl {
+    dt {
+      font-weight: 500;
+
+      &:not(:first-child) {
+        margin-top: 8px;
+      }
+    }
+
+    dd {
+      margin: 0;
+    }
+  }
+
+  > h2,
+  > h3,
+  > h4 {
+    margin-top: 24px;
+    margin-bottom: 16px;
+  }
+
+  > p,
+  > blockquote {
+    margin-bottom: 16px;
   }
 }
 </style>

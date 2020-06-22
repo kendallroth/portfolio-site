@@ -31,7 +31,9 @@
       <div class="is-left">
         <span class="project-card__name">{{ project.name }}</span>
         <span class="mx-xxs">&ndash;</span>
-        <span class="project-card__date">{{ project.year }}</span>
+        <span class="project-card__date">
+          {{ project.date | formatDate("yyyy") }}
+        </span>
       </div>
       <span class="project-card__type tag">{{ project.type | lowercase }}</span>
     </div>

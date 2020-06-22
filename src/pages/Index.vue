@@ -95,16 +95,16 @@ query {
   }
   projects: allProject(
     filter: { published: { eq: true } }
-    sort: [{ by: "year", order: DESC }, { by: "status", order: ASC }]
+    sort: [{ by: "date", order: DESC }, { by: "status", order: ASC }]
   ) {
     edges {
       node {
+        date
         image(width: 500)
         link
         name
         slug
         type
-        year
       }
     }
   }
