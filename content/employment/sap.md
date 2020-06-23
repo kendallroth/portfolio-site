@@ -7,6 +7,7 @@ location: "Kitchener, ON"
 logo: "./logos/sap.png"
 position: "Emerging Technologies Developer"
 published: true
+skills: ["nodejs", "sapui5", "github", "iot", "arduino", "database"]
 slug: "sap"
 types: ["co-op"]
 website: "https://www.sap.com"

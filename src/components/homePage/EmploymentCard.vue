@@ -15,6 +15,7 @@
               class="employment-card__header__link"
               rel="noreferrer"
               target="_blank"
+              @click.stop
             >
               <i class="material-icons">link</i>
             </a>
@@ -44,9 +45,19 @@
       v-if="!placeholder"
       ref="content"
       :style="contentStyle"
-      class="employment-card__content"
+      class="employment-card__content-wrapper"
     >
-      <div v-html="job.content" class="employment-card__html" />
+      <div class="employment-card__content">
+        <div
+          v-if="job.skills && job.skills.length > 0"
+          class="employment-card__content__skills tags mb-xs"
+        >
+          <div v-for="skill in job.skills" :key="skill" class="tag">
+            {{ skill }}
+          </div>
+        </div>
+        <div v-html="job.content" class="employment-card__content__html" />
+      </div>
     </div>
   </div>
 </template>
@@ -234,22 +245,25 @@ $logo-size: 50px;
     transform: rotate(180deg);
   }
 }
-</style>
 
-<style lang="scss">
-// NOTE: Unscoped SCSS is necessary for v-html
-.employment-card__content {
+// Employment card content
+.employment-card__content-wrapper {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease;
 }
 
-.employment-card__html {
+.employment-card__content {
   padding: 16px;
+  border-top: 1px solid $color-grey-light;
   color: black;
   font-size: 0.9rem;
-  border-top: 1px solid $color-grey-light;
+}
+</style>
 
+<style lang="scss">
+// NOTE: Unscoped SCSS is necessary for v-html
+.employment-card__content__html {
   ul {
     margin: 0;
     padding-left: 16px;

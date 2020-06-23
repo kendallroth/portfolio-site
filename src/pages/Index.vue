@@ -88,6 +88,7 @@ query {
         position
         location
         logo(width: 50)
+        skills
         website
         dates {
           start(format: "yyyy MMM")

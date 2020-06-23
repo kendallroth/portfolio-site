@@ -7,6 +7,7 @@ location: "Kitchener, ON"
 logo: "./logos/conestoga_college.png"
 position: "Junior Web Developer"
 published: true
+skills: ["java", "jsp", "html", "css"]
 slug: "conestoga-college"
 types: ["part-time"]
 website: "https://www.conestogac.on.ca"

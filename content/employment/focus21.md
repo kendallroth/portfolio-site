@@ -7,6 +7,7 @@ location: "Kitchener, ON"
 logo: "./logos/focus21.png"
 position: "Full Stack Developer"
 published: true
+skills: ["nodejs", "react", "vue", "docker", "gitlab", "postgresql", "graphql", "python"]
 slug: "focus21"
 types: ["co-op", "full-time", "part-time"]
 website: "https://www.focus21.io"
