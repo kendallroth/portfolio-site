@@ -11,4 +11,7 @@ slug: "netwseeper"
 types: ["co-op"]
 website: "https://www.netsweeper.com"
 ---
-_TODO_
+
+- Analyze and apply fixes to bugs within a sprint-based development cycle.
+- Responsible for developing, integrating and documenting new features as specified by supervisor.
+- Assist with QA testing on product involving writing unit tests and running manual tests.

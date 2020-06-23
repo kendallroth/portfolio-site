@@ -11,4 +11,7 @@ slug: "conestoga-college"
 types: ["part-time"]
 website: "https://www.conestogac.on.ca"
 ---
-_TODO_
+
+- Responsible for creating and maintaining web pages based on content provided by manager.
+- Ensure design and content of web pages meet usability and accessibility standards.
+- Interface with clients to ensure finished product meets their expectations.

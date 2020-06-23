@@ -53,7 +53,7 @@
       </div>
     </PageSection>
 
-    <PageSection class="employment-section" size="sm-10 md-8 lg-6">
+    <PageSection class="employment-section" size="sm-10 md-8 lg-7">
       <h2 class="section-title mb-md">Where I've Worked</h2>
       <div class="employment-section__cards">
         <EmploymentCard
@@ -83,6 +83,7 @@ query {
     edges {
       node {
         id
+        content
         name
         position
         location

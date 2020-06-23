@@ -1,6 +1,6 @@
 <template>
-  <div :class="{ 'is-placeholder': placeholder }" class="employment-card">
-    <div class="employment-card__header card">
+  <div :class="{ 'is-placeholder': placeholder }" class="employment-card card">
+    <div class="employment-card__header" @click="toggleContent">
       <div class="employment-card__header__logo ratio-1by1">
         <g-image v-if="job.logo" :alt="`${job.title} Logo`" :src="job.logo" />
         <div v-else class="employment-card__header__logo-placeholder" />
@@ -31,7 +31,22 @@
             {{ job.location }}
           </div>
         </div>
+        <i
+          v-if="!placeholder"
+          :class="{ 'is-active': isShown }"
+          class="employment-card__header__toggle-icon material-icons"
+        >
+          keyboard_arrow_up
+        </i>
       </div>
+    </div>
+    <div
+      v-if="!placeholder"
+      ref="content"
+      :style="contentStyle"
+      class="employment-card__content"
+    >
+      <div v-html="job.content" class="employment-card__html" />
     </div>
   </div>
 </template>
@@ -55,6 +70,30 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      isShown: false,
+    };
+  },
+  computed: {
+    contentStyle() {
+      const contentEl = this.$refs.content;
+
+      return {
+        maxHeight: this.isShown ? contentEl.scrollHeight + "px" : 0,
+      };
+    },
+  },
+  methods: {
+    /**
+     * Toggle the card content
+     */
+    toggleContent() {
+      if (this.placeholder) return;
+
+      this.isShown = !this.isShown;
+    },
+  },
 };
 </script>
 
@@ -70,10 +109,11 @@ $logo-size: 50px;
   }
 
   &.is-placeholder {
+    background-color: rgba(200, 200, 200, 0.5);
+
     // TODO: Possibly replace?
     .employment-card__header {
       color: white;
-      background-color: rgba(200, 200, 200, 0.5);
       cursor: not-allowed;
 
       * {
@@ -89,6 +129,7 @@ $logo-size: 50px;
   align-items: center;
   padding: 12px 16px;
   color: black;
+  cursor: pointer;
 }
 
 .employment-card__header__logo {
@@ -136,6 +177,11 @@ $logo-size: 50px;
   display: flex;
   margin-left: 4px;
   color: $theme-primary-dark;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $theme-primary-light;
+  }
 }
 
 .employment-card__header__position {
@@ -155,5 +201,45 @@ $logo-size: 50px;
 .employment-card__header__location {
   color: $color-grey-dark;
   font-weight: 300;
+}
+
+.employment-card__header__toggle-icon {
+  margin-left: 8px;
+  padding: 4px;
+  font-size: 1.5rem;
+  color: $theme-primary;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    background-color: transparentize($theme-primary, 0.9);
+  }
+
+  &.is-active {
+    transform: rotate(180deg);
+  }
+}
+</style>
+
+<style lang="scss">
+// NOTE: Unscoped SCSS is necessary for v-html
+.employment-card__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease;
+}
+
+.employment-card__html {
+  padding: 16px;
+  color: black;
+  font-size: 0.9rem;
+  border-top: 1px solid $color-grey-light;
+
+  ul {
+    margin: 0;
+    padding-left: 16px;
+    list-style-type: circle;
+  }
 }
 </style>
