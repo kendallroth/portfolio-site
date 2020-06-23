@@ -85,7 +85,9 @@ query {
         id
         name
         position
+        location
         logo(width: 50)
+        website
         dates {
           start(format: "yyyy MMM")
           end(format: "yyyy MMM")
