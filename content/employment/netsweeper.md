@@ -7,7 +7,7 @@ location: "Kitchener, ON"
 logo: "./logos/netsweeper.png"
 position: "Software Developer"
 published: true
-skills: ["php", "html", "css", "selenium"]
+skills: ["php", "html", "css", "selenium", "testing"]
 slug: "netwseeper"
 types: ["co-op"]
 website: "https://www.netsweeper.com"
