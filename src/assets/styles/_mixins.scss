@@ -79,3 +79,27 @@
     transform: skewY(#{$degrees}deg);
   }
 }
+
+/**
+ * Transition a set of properties
+ * @param {string[]} properties - Transition properties
+ * @param {number}   time       - Transition time
+ * @param {string}   type       - Transition type
+ */
+@mixin transition($properties, $time: 0.2s, $type: ease) {
+  $result: null;
+  $comma: ",";
+
+  @for $i from 1 through length($properties) {
+    $property: nth($properties, $i);
+    $value: $property $time $type;
+
+    $result: if(
+      $i != length($properties),
+      $result#{$value}#{$comma},
+      $result#{$value}
+    );
+  }
+
+  transition: $result;
+}

@@ -77,14 +77,27 @@ export default {
   },
   computed: {
     contentStyle() {
-      const contentEl = this.$refs.content;
-
       return {
-        maxHeight: this.isShown ? contentEl.scrollHeight + "px" : 0,
+        maxHeight: this.getContentHeight(),
       };
     },
   },
+  mounted() {
+    // Ongoing jobs should be displayed by default
+    if (!this.job.dates.end) {
+      this.isShown = true;
+    }
+  },
   methods: {
+    /**
+     * Get the height of the content div
+     */
+    getContentHeight() {
+      const contentEl = this.$refs.content;
+      if (!this.isShown || !contentEl) return 0;
+
+      return contentEl.scrollHeight + "px";
+    },
     /**
      * Toggle the card content
      */
@@ -177,7 +190,7 @@ $logo-size: 50px;
   display: flex;
   margin-left: 4px;
   color: $theme-primary-dark;
-  transition: color 0.2s ease;
+  @include transition(color);
 
   &:hover {
     color: $theme-primary-light;
@@ -210,7 +223,8 @@ $logo-size: 50px;
   color: $theme-primary;
   border-radius: 100px;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  user-select: none;
+  @include transition((background-color, transform));
 
   &:hover {
     background-color: transparentize($theme-primary, 0.9);
