@@ -32,14 +32,14 @@
             {{ job.location }}
           </div>
         </div>
-        <i
-          v-if="!placeholder"
-          :class="{ 'is-active': isShown }"
-          class="employment-card__header__toggle-icon material-icons"
-        >
-          keyboard_arrow_up
-        </i>
       </div>
+      <i
+        v-if="!placeholder"
+        :class="{ 'is-active': isShown }"
+        class="employment-card__header__toggle-icon material-icons"
+      >
+        keyboard_arrow_up
+      </i>
     </div>
     <div
       v-if="!placeholder"

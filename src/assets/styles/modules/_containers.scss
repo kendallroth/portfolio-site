@@ -12,10 +12,12 @@
 .tags {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  margin: -4px;
   font-size: 0.8rem;
 
-  > .tag:not(:first-child) {
-    margin-left: 8px;
+  > .tag {
+    margin: 4px;
   }
 }
 
