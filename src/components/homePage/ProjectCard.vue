@@ -22,7 +22,7 @@
             target="_blank"
           >
             <i class="material-icons">link</i>
-            <span>View</span>
+            <span>Visit</span>
           </a>
         </div>
       </div>

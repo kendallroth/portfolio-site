@@ -10,7 +10,7 @@
         <g-image
           :alt="project.name"
           :src="project.image"
-          height="600"
+          height="533"
           width="800"
         />
         <a
@@ -38,7 +38,7 @@ query ($id: ID!) {
   project: project(id: $id) {
     content
     date
-    image(width: 800, height: 600, quality: 90)
+    image(width: 800, height: 533, quality: 90)
     link
     name
     tags
