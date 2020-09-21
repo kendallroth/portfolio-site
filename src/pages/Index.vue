@@ -49,7 +49,7 @@
         <SkillCard v-for="skill in skillCards" :key="skill.id" :skill="skill" />
       </div>
       <div class="skills-section__other">
-        * I have also experimented with Android, Auth0, and a few others.
+        * I have also experimented with Java, NestJS, Android, and a few others.
       </div>
     </PageSection>
 

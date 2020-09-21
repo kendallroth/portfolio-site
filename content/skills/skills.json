@@ -22,7 +22,7 @@
       "tags": ["web"]
     },
     {
-      "name": "GitLab",
+      "name": "GitLab / GitHub",
       "description": "",
       "image": "gitlab",
       "rating": 90,
@@ -92,11 +92,11 @@
       "tags": ["traditional"]
     },
     {
-      "name": "Java",
+      "name": "React Native",
       "description": "",
-      "image": "java",
+      "image": "react",
       "rating": 45,
-      "tags": ["traditional"]
+      "tags": ["app"]
     },
     {
       "name": "Docker",
