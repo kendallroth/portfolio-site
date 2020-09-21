@@ -1,7 +1,7 @@
 ---
 dates:
   start: "2018-05"
-  end:
+  end: "2020-08"
 name: "Focus21"
 location: "Kitchener, ON"
 logo: "./logos/focus21.png"
