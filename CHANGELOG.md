@@ -6,6 +6,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2020-09-21
+### Added
+- Weavik employment section
+- PayMe React Native project
+
+### Changed
+- Replaced a few skills
+
+## [1.1.0] - 2020-07-07
+### Added
+- `vue-simple-forms` NPM package project
+
 ## [1.0.0] - 2020-06-15
 ### Added
 - Site layout and structure (header, footer, content)
