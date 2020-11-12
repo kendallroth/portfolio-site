@@ -6,7 +6,7 @@
           Hi, I'm <span class="is-emphasized">Kendall Roth</span>.
         </h2>
         <h3 class="hero__subtitle">I'm a full-stack web developer.</h3>
-        <button class="hero__button" @click="scrollToPortfolio">
+        <button class="section-button hero__button" @click="scrollToPortfolio">
           View My Portfolio<i class="material-icons ml-xs">work</i>
         </button>
       </div>
@@ -100,6 +100,7 @@ query {
   projects: allProject(
     filter: { published: { eq: true } }
     sort: [{ by: "date", order: DESC }, { by: "status", order: ASC }]
+    limit: 6
   ) {
     edges {
       node {
@@ -195,6 +196,22 @@ $skill-card-margin: 8px;
   text-align: center;
 }
 
+.section-button {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  font-size: 1.1rem;
+  background-color: transparent;
+  border-width: 4px;
+  border-style: double;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-style: solid;
+  }
+}
+
 // Hero section
 .hero__content {
   display: flex;
@@ -230,15 +247,9 @@ $skill-card-margin: 8px;
 }
 
 .hero__button {
-  display: flex;
-  align-items: center;
-  padding: 12px 16px;
   color: white;
-  font-size: 1.1rem;
   background-color: transparent;
   border: 4px double $color-light;
-  border-radius: 4px;
-  transition: all 0.2s ease;
 
   &:hover {
     background-color: $theme-primary;
@@ -302,6 +313,15 @@ $skill-card-margin: 8px;
   @include smUp() {
     @include skewBackground("top-right", 1);
     @include skewBackground("bottom-left", 1);
+  }
+}
+
+.projects-section__button {
+  margin-top: 24px;
+  color: white;
+
+  &:hover {
+    background-color: $theme-primary-light;
   }
 }
 
