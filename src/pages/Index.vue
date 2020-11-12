@@ -41,6 +41,9 @@
           :project="project"
         />
       </div>
+      <g-link class="section-button projects-section__button" to="/projects">
+        All Projects
+      </g-link>
     </PageSection>
 
     <PageSection class="skills-section py-lg" size="lg-10">
