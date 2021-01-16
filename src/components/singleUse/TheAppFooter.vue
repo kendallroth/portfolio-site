@@ -22,7 +22,7 @@
         &copy; Kendall Roth {{ new Date().getFullYear() }}
       </div>
       <div class="footer__info__developer">
-        Made with <i class="material-icons has-text-love mx-xs">favorite</i>
+        Made with <MdiIcon :icon="icons.mdiHeart" class="has-text-love mx-xs" />
         from scratch using&nbsp;
         <a
           class="has-text-gridsome"
@@ -49,6 +49,8 @@ query {
 </static-query>
 
 <script>
+import { mdiHeart } from "@mdi/js";
+
 // Utils
 import gitHubLogo from "@assets/icons/icon_github_light.svg";
 import gitLabLogo from "@assets/icons/icon_gitlab_light.svg";
@@ -68,6 +70,7 @@ export default {
   name: "TheAppFooter",
   data() {
     return {
+      icons: { mdiHeart },
       socialMediaIcons,
     };
   },

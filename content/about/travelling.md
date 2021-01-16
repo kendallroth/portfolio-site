@@ -1,6 +1,6 @@
 ---
 caption: travelling and experiencing different cultures and traditions
-icon: local_airport
+icon: airport
 title: Travelling
 published: true
 ---

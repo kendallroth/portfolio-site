@@ -20,7 +20,7 @@
             type="button"
             @click="close"
           >
-            <i class="material-icons">close</i>
+            <MdiIcon :icon="icons.close" />
           </button>
         </slot>
         <div id="modal__content" class="modal__body">
@@ -39,6 +39,8 @@
 </template>
 
 <script>
+import { mdiClose } from "@mdi/js";
+
 export default {
   name: "modal",
   props: {
@@ -77,6 +79,11 @@ export default {
       type: [Number, String],
       default: 500,
     },
+  },
+  data() {
+    return {
+      icons: { mdiClose },
+    };
   },
   methods: {
     /**
@@ -142,10 +149,6 @@ $transition-time: 0.2s;
   right: 16px;
   padding: 4px;
   border: none;
-
-  .material-icons {
-    font-weight: inherit;
-  }
 }
 
 .modal__body {

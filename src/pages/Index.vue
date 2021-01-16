@@ -7,14 +7,12 @@
         </h2>
         <h3 class="hero__subtitle">I'm a full-stack web developer.</h3>
         <button class="section-button hero__button" @click="scrollToPortfolio">
-          View My Portfolio<i class="material-icons ml-xs">work</i>
+          View My Portfolio<MdiIcon :icon="icons.mdiBriefcase" class="ml-xs" />
         </button>
       </div>
     </Hero>
 
-    <div class="welcome-section">
-      Welcome to my online portfolio!
-    </div>
+    <div class="welcome-section">Welcome to my online portfolio!</div>
 
     <PageSection ref="firstSectionRef" class="about-section py-lg">
       <h2 class="section-title mb-sm">What I Do</h2>
@@ -78,11 +76,13 @@
 query {
   jobs: allEmployment(
     filter: {
-    published: { eq: true }
-  }, sort: {
-    by: "dates.start",
-    order: DESC
-  }) {
+      published: { eq: true }
+    },
+    sort: {
+      by: "dates.start",
+      order: DESC
+    }
+  ) {
     edges {
       node {
         id
@@ -102,7 +102,11 @@ query {
   }
   projects: allProject(
     filter: { published: { eq: true } }
-    sort: [{ by: "date", order: DESC }, { by: "status", order: ASC }]
+    sort: [
+      { by: "pinned" },
+      { by: "date", order: DESC },
+      { by: "status", order: ASC }
+    ]
     limit: 6
   ) {
     edges {
@@ -111,6 +115,7 @@ query {
         image(width: 500)
         link
         name
+        pinned
         slug
         type
       }
@@ -132,6 +137,8 @@ query {
 </page-query>
 
 <script>
+import { mdiBriefcase } from "@mdi/js";
+
 // Components
 import Hero from "@components/Hero";
 import AboutMeCard from "@components/homePage/AboutMeCard";
@@ -150,6 +157,11 @@ export default {
     Hero,
     ProjectCard,
     SkillCard,
+  },
+  data() {
+    return {
+      icons: { mdiBriefcase },
+    };
   },
   computed: {
     aboutMeCards() {

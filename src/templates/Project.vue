@@ -19,7 +19,7 @@
           rel="noreferrer"
           target="_blank"
         >
-          <i class="material-icons mr-xs">open_in_new</i>
+          <MdiIcon :icon="icons.mdiOpenInNew" class="mr-xs" />
           <span>Visit</span>
         </a>
       </div>
@@ -48,8 +48,15 @@ query ($id: ID!) {
 </page-query>
 
 <script>
+import { mdiOpenInNew } from "@mdi/js";
+
 export default {
   name: "Project",
+  data() {
+    return {
+      icons: { mdiOpenInNew },
+    };
+  },
   computed: {
     project() {
       return this.$page.project;

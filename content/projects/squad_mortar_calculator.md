@@ -3,6 +3,7 @@ date: 2020-11-31
 image: ./images/squad_mortar_calculator.png
 name: Squad Mortar Calculator
 link: https://www.gitlab.com/kendallroth/squad-mortar-calculator
+pinned: false
 published: true
 slug: squad-mortar-calculator
 status: Active

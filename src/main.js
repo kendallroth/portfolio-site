@@ -11,6 +11,7 @@ import {
 } from "@utilities/filters";
 
 // Components
+import MdiIcon from "@components/MdiIcon";
 import Hover from "@components/Hover";
 import PageSection from "@components/layout/PageSection";
 import DefaultLayout from "@layouts/Default";
@@ -19,6 +20,7 @@ import DefaultLayout from "@layouts/Default";
 import "@styles/styles.scss";
 
 export default function (Vue, { router }) {
+  Vue.component("MdiIcon", MdiIcon);
   Vue.component("Hover", Hover);
   // Set default layout as a global component
   Vue.component("Layout", DefaultLayout);

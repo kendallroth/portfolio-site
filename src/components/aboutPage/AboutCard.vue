@@ -1,7 +1,7 @@
 <template>
   <div :class="{ 'is-primary': primary }" class="about-card card">
     <div class="about-card__header elevation-2">
-      <i class="about-card__icon material-icons">{{ icon }}</i>
+      <MdiIcon :icon="icons[icon]" class="about-card__icon" />
       <div class="about-card__titles">
         <h2 class="about-card__title">
           {{ title }}
@@ -22,6 +22,15 @@
 </template>
 
 <script>
+import {
+  mdiAirplaneTakeoff,
+  mdiBook,
+  mdiSeat,
+  mdiFace,
+  mdiMusicNote,
+  mdiSchool,
+} from "@mdi/js";
+
 export default {
   name: "AboutCard",
   props: {
@@ -46,6 +55,18 @@ export default {
       type: String,
       required: true,
     },
+  },
+  data() {
+    return {
+      icons: {
+        airport: mdiAirplaneTakeoff,
+        book: mdiBook,
+        seat: mdiSeat,
+        face: mdiFace,
+        music: mdiMusicNote,
+        school: mdiSchool,
+      },
+    };
   },
 };
 </script>
@@ -86,8 +107,8 @@ $about-card-padding: 16px;
 
 .about-card__icon {
   margin-right: $about-card-padding;
-  font-size: 48px;
-  line-height: 1;
+  width: 48px;
+  height: 48px;
 }
 
 .about-card__title {
