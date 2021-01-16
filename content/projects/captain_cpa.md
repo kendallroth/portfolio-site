@@ -3,6 +3,7 @@ date: 2015-03-14
 image: ./images/captain_cpa.png
 name: Captain CPA
 link: https://github.com/kendallroth/CaptainCPA
+pinned: false
 published: true
 slug: captain-cpa
 status: Completed

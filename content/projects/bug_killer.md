@@ -3,6 +3,7 @@ date: 2020-04-30
 image: ./images/bug_killer.png
 name: Bug Killer
 link: https://kendallroth.itch.io/bug-killer
+pinned: true
 published: true
 slug: bug-killer
 status: Completed

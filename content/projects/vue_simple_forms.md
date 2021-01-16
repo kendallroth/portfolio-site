@@ -3,6 +3,7 @@ date: 2020-06-30
 image: ./images/vue_simple_forms.png
 name: Vue Simple Forms
 link: https://www.npmjs.com/package/@kendallroth/vue-simple-forms
+pinned: true
 published: true
 slug: vue-simple-forms
 status: Active

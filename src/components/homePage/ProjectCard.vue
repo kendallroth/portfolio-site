@@ -11,7 +11,7 @@
             :to="`/project/${project.slug}/`"
             class="project-card__overlay__action"
           >
-            <i class="material-icons">description</i>
+            <MdiIcon :icon="icons.mdiFileDocument" />
             <span>Details</span>
           </g-link>
           <a
@@ -21,7 +21,7 @@
             rel="noreferrer"
             target="_blank"
           >
-            <i class="material-icons">link</i>
+            <MdiIcon :icon="icons.mdiLink" />
             <span>Visit</span>
           </a>
         </div>
@@ -35,12 +35,23 @@
           {{ project.date | formatDate("yyyy") }}
         </span>
       </div>
-      <span class="project-card__type tag">{{ project.type | lowercase }}</span>
+      <div class="is-right">
+        <MdiIcon
+          v-if="project.pinned"
+          :icon="icons.mdiPin"
+          class="project-card__pin"
+        />
+        <span class="project-card__type tag">
+          {{ project.type | lowercase }}
+        </span>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mdiFileDocument, mdiLink, mdiPin } from "@mdi/js";
+
 export default {
   name: "ProjectCard",
   props: {
@@ -51,6 +62,7 @@ export default {
   },
   data() {
     return {
+      icons: { mdiFileDocument, mdiLink, mdiPin },
       isShown: false,
     };
   },
@@ -69,6 +81,7 @@ export default {
 
 <style lang="scss" scoped>
 .project-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 4px;
@@ -119,8 +132,10 @@ export default {
     opacity: 1;
   }
 
-  .material-icons {
-    font-size: 3rem;
+  svg {
+    margin-bottom: 4px;
+    width: 3rem;
+    height: 3rem;
   }
 
   > *:not(:first-child) {
@@ -150,6 +165,12 @@ export default {
     display: flex;
     align-items: center;
   }
+
+  .is-right {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
 }
 
 .project-card__name {
@@ -160,6 +181,12 @@ export default {
   color: $color-grey;
   font-weight: 300;
   font-style: italic;
+}
+
+.project-card__pin {
+  height: 1rem;
+  margin-right: 4px;
+  color: $color-grey;
 }
 
 .project-card__type {

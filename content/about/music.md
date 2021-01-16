@@ -1,6 +1,6 @@
 ---
 caption: using my musical and choral gifts to make a difference
-icon: music_note
+icon: music
 title: Music
 published: true
 ---

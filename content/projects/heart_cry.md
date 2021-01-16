@@ -3,6 +3,7 @@ date: 2020-04-30
 image: ./images/heart_cry_site.png
 name: Heart Cry Ensemble
 link: https://www.heartcryensemble.ca
+pinned: true
 published: true
 slug: heart-cry
 status: Active

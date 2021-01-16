@@ -27,6 +27,8 @@
   "dependencies": {
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-remark": "^0.6.0",
+    "@jamescoyle/vue-icon": "^0.1.0",
+    "@mdi/js": "^5.8.55",
     "date-fns": "^2.14.0",
     "dotenv": "^8.2.0",
     "gridsome": "^0.7.0",

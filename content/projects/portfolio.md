@@ -3,6 +3,7 @@ date: 2020-05-31
 image: ./images/portfolio_site.png
 name: Portfolio
 link: https://www.kendallroth.ca
+pinned: false
 published: true
 slug: portfolio
 status: Active

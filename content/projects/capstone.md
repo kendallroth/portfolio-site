@@ -2,6 +2,7 @@
 date: 2018-04-30
 image: ./images/capstone.png
 name: Capstone Project
+pinned: true
 published: true
 slug: capstone
 status: Completed

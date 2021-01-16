@@ -17,7 +17,7 @@
               target="_blank"
               @click.stop
             >
-              <i class="material-icons">link</i>
+              <MdiIcon :icon="icons.mdiLink" />
             </a>
           </div>
           <div class="employment-card__header__position">
@@ -33,13 +33,12 @@
           </div>
         </div>
       </div>
-      <i
+      <MdiIcon
         v-if="!placeholder"
         :class="{ 'is-active': isShown }"
-        class="employment-card__header__toggle-icon material-icons"
-      >
-        keyboard_arrow_up
-      </i>
+        :icon="icons.mdiChevronUp"
+        class="employment-card__header__toggle-icon"
+      />
     </div>
     <div
       v-if="!placeholder"
@@ -63,6 +62,8 @@
 </template>
 
 <script>
+import { mdiChevronUp, mdiLink } from "@mdi/js";
+
 export default {
   name: "EmploymentCard",
   props: {
@@ -83,6 +84,7 @@ export default {
   },
   data() {
     return {
+      icons: { mdiChevronUp, mdiLink },
       isShown: false,
     };
   },
@@ -226,11 +228,11 @@ $logo-size: 50px;
   color: $color-grey-dark;
   font-weight: 300;
 }
-
 .employment-card__header__toggle-icon {
+  width: 2rem;
+  height: 2rem;
   margin-left: 8px;
   padding: 4px;
-  font-size: 1.5rem;
   color: $theme-primary;
   border-radius: 100px;
   cursor: pointer;

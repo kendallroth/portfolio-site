@@ -3,6 +3,7 @@ date: 2020-08-31
 image: ./images/payme.png
 name: PayMe
 link: https://www.gitlab.com/kendallroth/payme
+pinned: true
 published: true
 slug: payme
 status: Active

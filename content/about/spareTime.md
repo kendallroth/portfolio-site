@@ -1,6 +1,6 @@
 ---
 caption: taking time to relax and enjoy life
-icon: event_seat
+icon: seat
 title: Spare Time
 published: true
 ---

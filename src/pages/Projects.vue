@@ -2,6 +2,10 @@
   <Layout>
     <PageSection class="projects-page py-lg">
       <h2 class="section-title mb-md">What I've Done</h2>
+      <blockquote class="projects-page__quote">
+        These projects represent a wide variety of the items I've experimented
+        with:<br />check out my Git repositories for more!
+      </blockquote>
       <div class="projects-page__cards">
         <ProjectCard
           v-for="project in projectCards"
@@ -25,6 +29,7 @@ query {
         image(width: 500)
         link
         name
+        pinned
         slug
         type
       }
@@ -54,7 +59,15 @@ export default {
 <style lang="scss" scoped>
 $project-card-margin: 16px;
 
-.projects-page {}
+.projects-page__quote {
+  margin-bottom: 32px;
+  padding: 12px 16px;
+  color: $color-grey;
+  font-size: 1.1rem;
+  border-left: 3px solid $color-grey-light;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
 
 .projects-page__cards {
   display: flex;
