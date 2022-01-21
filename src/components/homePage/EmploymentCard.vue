@@ -98,7 +98,7 @@ export default {
       };
     },
     jobTypes() {
-      return this.job.types.join(", ");
+      return this.job.types?.join(", ") ?? "";
     },
   },
   mounted() {
