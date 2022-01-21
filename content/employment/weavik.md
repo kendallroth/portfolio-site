@@ -5,14 +5,16 @@ dates:
 name: "Weavik"
 location: "Waterloo, ON"
 logo: "./logos/weavik.png"
-position: "Full Stack Developer"
+position: "Senior Web Developer"
 published: true
-skills: ["nestjs", "react", "react-native", "docker", "github", "postgresql"]
-slug: "focus21"
+skills: ["typescript", "nestjs", "react-native", "vuejs", "architecture", "mentoring", "github", "docker"]
+slug: "weavik"
 types: ["full-time"]
 website: "https://www.weavik.com"
 ---
 
-- Write engaging and maintainable React Native apps in a small team environment.
-- Create and implement development processes for React Native apps
-- _More to follow in months to come!_
+- Write and support engaging and maintainable apps in a small team environment.
+- Architect and bootstrap multiple fullstack TypeScript projects (React Native, VueJS, NestJS).
+- Provide code review and mentoring for junior developers.
+- Assist with company-wide architecture review and process improvement/implementation.
+- Interact with clients to ensure requirements are met and support is provided.

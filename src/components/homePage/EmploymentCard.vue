@@ -22,6 +22,9 @@
           </div>
           <div class="employment-card__header__position">
             {{ job.position }}
+            <span class="employment-card__header__types">
+              ({{ jobTypes }})
+            </span>
           </div>
         </div>
         <div class="employment-card__header__additional">
@@ -93,6 +96,9 @@ export default {
       return {
         maxHeight: this.getContentHeight(),
       };
+    },
+    jobTypes() {
+      return this.job.types.join(", ");
     },
   },
   mounted() {
@@ -201,13 +207,20 @@ $logo-size: 50px;
 
 .employment-card__header__link {
   display: flex;
-  margin-left: 4px;
+  margin-left: $spacing;
   color: $theme-primary-dark;
   @include transition(color);
 
   &:hover {
     color: $theme-primary-light;
   }
+}
+
+.employment-card__header__types {
+  margin-left: $spacing;
+  font-weight: normal;
+  font-size: 0.8rem;
+  color: $color-grey-light;
 }
 
 .employment-card__header__position {

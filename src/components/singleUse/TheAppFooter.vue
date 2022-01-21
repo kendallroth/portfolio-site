@@ -33,6 +33,12 @@
           Gridsome
         </a>
       </div>
+      <div class="footer__version">
+        <span class="footer__version__number">v{{ version }}</span>
+        <span v-if="gitCommit || true" class="footer__version__commit">
+          &ensp;@&ensp;{{ gitCommit || "c92ka9e" }}
+        </span>
+      </div>
     </div>
   </footer>
 </template>
@@ -55,10 +61,11 @@ import { mdiHeart } from "@mdi/js";
 import gitHubLogo from "@assets/icons/icon_github_light.svg";
 import gitLabLogo from "@assets/icons/icon_gitlab_light.svg";
 import linkedInLogo from "@assets/icons/icon_linkedin_light.svg";
+import config from "@config";
 
 const socialMediaIcons = [
-  { name: "GitLab", image: gitLabLogo, url: "https://gitlab.com/kendallroth" },
   { name: "GitHub", image: gitHubLogo, url: "https://github.com/kendallroth" },
+  { name: "GitLab", image: gitLabLogo, url: "https://gitlab.com/kendallroth" },
   {
     name: "LinkedIn",
     image: linkedInLogo,
@@ -77,6 +84,12 @@ export default {
   computed: {
     contactEmail() {
       return this.$static.metadata.site.contactEmail;
+    },
+    gitCommit() {
+      return config.gitCommit;
+    },
+    version() {
+      return config.version;
     },
   },
 };
@@ -148,6 +161,17 @@ $footer-icon-size: 48px;
     &:not(:first-of-type) {
       margin-left: 24px;
     }
+  }
+}
+
+.footer__version {
+  display: flex;
+  margin-top: #{$spacing * 2} !important;
+  color: $color-grey-light;
+  font-size: 0.9rem;
+
+  .footer__version__commit {
+    font-family: monospace;
   }
 }
 
