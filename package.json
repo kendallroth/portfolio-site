@@ -1,13 +1,13 @@
 {
   "name": "portfolio-site",
   "description": "Portfolio site for Kendall Roth",
-  "version": "1.3.0",
-  "author": "Kendall Roth <kendall@kendallroth.ca> (https://kendallroth.ca)",
+  "version": "1.4.0",
+  "author": "Kendall Roth <kendall@kendallroth.ca> (https://www.kendallroth.ca)",
   "license": "MIT",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://gitlab.com/kendallroth/portfolio-site.git"
+    "url": "https://github.com/kendallroth/portfolio-site.git"
   },
   "scripts": {
     "build": "gridsome build",
@@ -29,13 +29,13 @@
     "@gridsome/transformer-remark": "^0.6.0",
     "@jamescoyle/vue-icon": "^0.1.0",
     "@mdi/js": "^5.8.55",
-    "date-fns": "^2.14.0",
+    "date-fns": "^2.16.1",
     "dotenv": "^8.2.0",
-    "gridsome": "^0.7.0",
+    "gridsome": "^0.7.23",
     "gridsome-plugin-pwa": "^0.0.18",
-    "node-sass": "^4.14.1",
-    "sass-loader": "^8.0.2",
-    "style-resources-loader": "^1.3.3",
+    "sass": "^1.44.0",
+    "sass-loader": "^12.3.0",
+    "style-resources-loader": "^1.4.1",
     "typeface-raleway": "^0.0.75"
   },
   "devDependencies": {
