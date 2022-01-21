@@ -7,7 +7,7 @@ pinned: true
 published: true
 slug: web-games
 status: Active
-tags: [vuejs, games]
+tags: [vuejs, typescript, games]
 type: Web App
 ---
 
@@ -15,5 +15,7 @@ type: Web App
 
 - [Flood It](https://games.kendallroth.ca/flood-it)
   - Flood the board with a single colour before time runs out!
+- [Minesweeper](https://games.kendallroth.ca/minesweeper)
+  - Sweep and clear a board of mines without detonating any!
 
 The project is built with VueJS and follows Google's Material Design concepts (utilizing the Vuetify component library). It allowed me to experiment with a simple GitLab pipelines workflow, as well as basic Jest tests for the underlying logic.

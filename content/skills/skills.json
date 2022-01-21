@@ -1,7 +1,7 @@
 {
   "technologies": [
     {
-      "name": "JavaScript",
+      "name": "TypeScript",
       "description": "",
       "image": "javascript",
       "rating": 95,
@@ -15,6 +15,20 @@
       "tags": ["web"]
     },
     {
+      "name": "React Native",
+      "description": "",
+      "image": "react",
+      "rating": 85,
+      "tags": ["app"]
+    },
+    {
+      "name": "Node",
+      "description": "",
+      "image": "node",
+      "rating": 75,
+      "tags": ["scripting"]
+    },
+    {
       "name": "CSS / SCSS",
       "description": "",
       "image": "scss",
@@ -22,18 +36,18 @@
       "tags": ["web"]
     },
     {
-      "name": "GitLab / GitHub",
-      "description": "",
-      "image": "gitlab",
-      "rating": 90,
-      "tags": ["management"]
-    },
-    {
       "name": "React",
       "description": "",
       "image": "react",
       "rating": 90,
       "tags": ["web"]
+    },
+    {
+      "name": "GitHub / GitHub",
+      "description": "",
+      "image": "gitlab",
+      "rating": 90,
+      "tags": ["management"]
     },
     {
       "name": "Git",
@@ -48,13 +62,6 @@
       "image": "graphql",
       "rating": 80,
       "tags": ["data"]
-    },
-    {
-      "name": "Node",
-      "description": "",
-      "image": "node",
-      "rating": 75,
-      "tags": ["scripting"]
     },
     {
       "name": "Unity",
@@ -92,24 +99,17 @@
       "tags": ["traditional"]
     },
     {
-      "name": "React Native",
-      "description": "",
-      "image": "react",
-      "rating": 45,
-      "tags": ["app"]
-    },
-    {
       "name": "Docker",
       "description": "",
       "image": "docker",
-      "rating": 40,
+      "rating": 45,
       "tags": ["management"]
     },
     {
       "name": "Python",
       "description": "",
       "image": "python",
-      "rating": 45,
+      "rating": 30,
       "tags": ["scripting"]
     }
   ]

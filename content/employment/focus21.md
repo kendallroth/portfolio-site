@@ -9,7 +9,7 @@ position: "Full Stack Developer"
 published: true
 skills: ["nodejs", "react", "vue", "docker", "gitlab", "postgresql", "graphql", "python"]
 slug: "focus21"
-types: ["co-op", "full-time", "part-time"]
+types: ["co-op", "full-time", "contract"]
 website: "https://www.focus21.io"
 ---
 

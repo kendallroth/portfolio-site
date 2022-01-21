@@ -12,4 +12,4 @@ Choral music has long been a source of escape from the bustle of life, and I enj
 - **Faith Builders** - _British Isles tour/recording_ (2015)
 - **Acclamation Chorale** - _Spirituals recording_ (2018)
 - **Exultate Ensemble** - _Paraguay tour_ (2019)
-- **Cantate Domino** - _Premiere recording_ (2020)
+- **Cantate Domino** - _Premiere recording_ (2020, 2021, 2022)

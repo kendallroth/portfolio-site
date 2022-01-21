@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.4.0] - 2022-01-20
+### Updated
+- Updated PayMe project
+- Updated Weavik employment
+- Replaced `node-sass` (deprecated) with `dart-sass`
+
 ## [1.3.0] - 2021-01-17
 ### Added
 - Several additional projects
