@@ -20,7 +20,7 @@
             type="button"
             @click="close"
           >
-            <MdiIcon :icon="icons.close" />
+            <mdi-icon :icon="icons.close" />
           </button>
         </slot>
         <div id="modal__content" class="modal__body">

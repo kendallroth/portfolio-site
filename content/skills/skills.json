@@ -3,7 +3,7 @@
     {
       "name": "TypeScript",
       "description": "",
-      "image": "javascript",
+      "image": "typescript",
       "rating": 95,
       "tags": ["web"]
     },
@@ -22,11 +22,11 @@
       "tags": ["app"]
     },
     {
-      "name": "Node",
+      "name": "NestJS / Node",
       "description": "",
-      "image": "node",
-      "rating": 75,
-      "tags": ["scripting"]
+      "image": "nestjs",
+      "rating": 80,
+      "tags": ["server"]
     },
     {
       "name": "CSS / SCSS",
@@ -43,9 +43,9 @@
       "tags": ["web"]
     },
     {
-      "name": "GitHub / GitHub",
+      "name": "GitHub / GitLab",
       "description": "",
-      "image": "gitlab",
+      "image": "github",
       "rating": 90,
       "tags": ["management"]
     },

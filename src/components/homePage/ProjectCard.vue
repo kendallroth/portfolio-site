@@ -11,7 +11,7 @@
             :to="`/project/${project.slug}/`"
             class="project-card__overlay__action"
           >
-            <MdiIcon :icon="icons.mdiFileDocument" />
+            <mdi-icon :icon="icons.mdiFileDocument" />
             <span>Details</span>
           </g-link>
           <a
@@ -21,7 +21,7 @@
             rel="noreferrer"
             target="_blank"
           >
-            <MdiIcon :icon="icons.mdiLink" />
+            <mdi-icon :icon="icons.mdiLink" />
             <span>Visit</span>
           </a>
         </div>
@@ -36,7 +36,7 @@
         </span>
       </div>
       <div class="is-right">
-        <MdiIcon
+        <mdi-icon
           v-if="project.pinned"
           :icon="icons.mdiPin"
           class="project-card__pin"

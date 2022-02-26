@@ -22,7 +22,7 @@
         &copy; Kendall Roth {{ new Date().getFullYear() }}
       </div>
       <div class="footer__info__developer">
-        Made with <MdiIcon :icon="icons.mdiHeart" class="has-text-love mx-xs" />
+        Made with <mdi-icon :icon="icons.mdiHeart" class="has-text-love mx-xs" />
         from scratch using&nbsp;
         <a
           class="has-text-gridsome"
@@ -35,8 +35,8 @@
       </div>
       <div class="footer__version">
         <span class="footer__version__number">v{{ version }}</span>
-        <span v-if="gitCommit || true" class="footer__version__commit">
-          &ensp;@&ensp;{{ gitCommit || "c92ka9e" }}
+        <span v-if="gitCommit" class="footer__version__commit">
+          &ensp;@&ensp;{{ gitCommit }}
         </span>
       </div>
     </div>
@@ -46,6 +46,7 @@
 <static-query>
 query {
   metadata {
+    gitCommit
     site {
       contactEmail
       siteName
@@ -86,7 +87,7 @@ export default {
       return this.$static.metadata.site.contactEmail;
     },
     gitCommit() {
-      return config.gitCommit;
+      return this.$static.metadata.gitCommit;
     },
     version() {
       return config.version;
@@ -124,7 +125,6 @@ $footer-icon-size: 48px;
 
   &:hover {
     background-color: $color-grey-dark;
-    font-weight: 500;
   }
 }
 

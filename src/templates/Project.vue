@@ -1,6 +1,6 @@
 <template>
-  <Layout>
-    <PageSection size="md-10 lg-8">
+  <page-layout>
+    <page-section size="md-10 lg-8">
       <h2 class="project__title mt-sm mb-xs">{{ project.name }}</h2>
       <h3 class="project__subtitle mb-sm">
         {{ project.date | formatDate("yyyy") }}&thinsp;&ndash;&thinsp;
@@ -19,7 +19,7 @@
           rel="noreferrer"
           target="_blank"
         >
-          <MdiIcon :icon="icons.mdiOpenInNew" class="mr-xs" />
+          <mdi-icon :icon="icons.mdiOpenInNew" class="mr-xs" />
           <span>Visit</span>
         </a>
       </div>
@@ -29,8 +29,8 @@
         </span>
       </div>
       <div v-html="project.content" class="project__html mt-sm" />
-    </PageSection>
-  </Layout>
+    </page-section>
+  </page-layout>
 </template>
 
 <page-query>

@@ -1,5 +1,5 @@
 <template>
-  <Layout :headerOffset="false">
+  <page-layout :headerOffset="false">
     <Hero>
       <div class="hero__content">
         <h2 class="hero__title">
@@ -7,18 +7,18 @@
         </h2>
         <h3 class="hero__subtitle">I'm a full-stack web developer.</h3>
         <button class="section-button hero__button" @click="scrollToPortfolio">
-          View My Portfolio<MdiIcon :icon="icons.mdiBriefcase" class="ml-xs" />
+          View My Portfolio<mdi-icon :icon="icons.mdiBriefcase" class="ml-xs" />
         </button>
       </div>
     </Hero>
 
     <div class="welcome-section">Welcome to my online portfolio!</div>
 
-    <PageSection ref="firstSectionRef" class="about-section py-lg">
+    <page-section ref="firstSectionRef" class="about-section py-lg">
       <h2 class="section-title mb-sm">What I Do</h2>
       <blockquote class="about-section__quote">
-        I‘m passionate about web design and development, focusing on clean and
-        simple design/functionality. I strive to be a dedicated team player
+        I&rsquo;m passionate about web design and development, focusing on clean
+        and simple design/functionality. I strive to be a dedicated team player
         while adapting to different environments and tasks.
       </blockquote>
       <div class="about-section__cards">
@@ -28,12 +28,12 @@
           :details="card"
         />
       </div>
-    </PageSection>
+    </page-section>
 
-    <PageSection class="projects-section py-lg">
+    <page-section class="projects-section py-lg">
       <h2 class="section-title mb-md">What I've Done</h2>
       <div class="projects-section__cards">
-        <ProjectCard
+        <project-card
           v-for="project in projectCards"
           :key="project.name"
           :project="project"
@@ -42,22 +42,26 @@
       <g-link class="section-button projects-section__button" to="/projects">
         All Projects
       </g-link>
-    </PageSection>
+    </page-section>
 
-    <PageSection class="skills-section py-lg" size="lg-10">
+    <page-section class="skills-section py-lg" size="lg-10">
       <h2 class="section-title mb-md">What I've Worked With</h2>
       <div class="skills-section__cards">
-        <SkillCard v-for="skill in skillCards" :key="skill.id" :skill="skill" />
+        <skill-card
+          v-for="skill in skillCards"
+          :key="skill.id"
+          :skill="skill"
+        />
       </div>
       <div class="skills-section__other">
-        * I have also experimented with Java, NestJS, Android, and a few others.
+        * I have also experimented with Electron, Java, and a few others.
       </div>
-    </PageSection>
+    </page-section>
 
-    <PageSection class="employment-section" size="sm-10 md-8 lg-7">
+    <page-section class="employment-section" size="sm-10 md-8 lg-7">
       <h2 class="section-title mb-md">Where I've Worked</h2>
       <div class="employment-section__cards">
-        <EmploymentCard
+        <employment-card
           :job="{
             name: '[ Your Name ]',
             position: '[ Interesting Title ]',
@@ -66,10 +70,10 @@
           placeholder
         />
         <hr class="employment-section__divider" />
-        <EmploymentCard v-for="job in jobCards" :key="job.title" :job="job" />
+        <employment-card v-for="job in jobCards" :key="job.title" :job="job" />
       </div>
-    </PageSection>
-  </Layout>
+    </page-section>
+  </page-layout>
 </template>
 
 <page-query>

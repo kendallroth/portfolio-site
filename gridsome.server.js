@@ -7,15 +7,20 @@ function slugify(text) {
     .toString()
     .toLowerCase()
     .replace(/\s+/g, "-") // Replace spaces with -
-    .replace(/[^\w\-]+/g, "") // Remove all non-word chars
-    .replace(/\-\-+/g, "-") // Replace multiple - with single -
+    .replace(/[^\w-]+/g, "") // Remove all non-word chars
+    .replace(/--+/g, "-") // Replace multiple - with single -
     .replace(/^-+/, "") // Trim - from start of text
     .replace(/-+$/, ""); // Trim - from end of text
 }
 
 module.exports = function (api) {
   api.loadSource(({ addMetadata }) => {
+    const gitCommit = process.env.COMMIT_REF
+      ? process.env.COMMIT_REF.slice(0, 7)
+      : "N/A";
+
     addMetadata("site", siteMetadata);
+    addMetadata("gitCommit", gitCommit);
   });
 
   api.loadSource((actions) => {

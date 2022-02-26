@@ -1,6 +1,6 @@
 <template>
-  <Layout>
-    <PageSection class="projects-page py-lg">
+  <page-layout>
+    <page-section class="projects-page py-lg">
       <h2 class="section-title mb-md">What I've Done</h2>
       <blockquote class="projects-page__quote">
         These projects represent a wide variety of the items I've experimented
@@ -13,8 +13,8 @@
           :project="project"
         />
       </div>
-    </PageSection>
-  </Layout>
+    </page-section>
+  </page-layout>
 </template>
 
 <page-query>

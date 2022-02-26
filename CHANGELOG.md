@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.4.1] - 2022-02-26
+### Updated
+- Updated skills/technologies list
+- Minor content fixes/improvements
+- Fix broken Git commit reference
+
 ## [1.4.0] - 2022-01-20
 ### Updated
 - Updated PayMe project
