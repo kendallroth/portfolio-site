@@ -1,11 +1,11 @@
 <template>
   <div class="app__layout">
-    <TheAppHeader :transparent="headerTransparent" />
+    <the-app-header :transparent="headerTransparent" />
     <!-- Default content slot -->
     <div :class="{ 'app__content--offset': headerOffset }" class="app__content">
       <slot />
     </div>
-    <TheAppFooter v-if="includeFooter" />
+    <the-app-footer v-if="includeFooter" />
     <div v-if="isDebugBreakpointShown" class="debug-breakpoint">
       {{ $breakpoint.name }}
     </div>
@@ -22,8 +22,8 @@ query {
 
 <script>
 // Components
-import TheAppFooter from "@components/singleUse/TheAppFooter";
-import TheAppHeader from "@components/singleUse/TheAppHeader";
+import TheAppFooter from "@components/single/TheAppFooter";
+import TheAppHeader from "@components/single/TheAppHeader";
 
 // Utilities
 import config from "@config";

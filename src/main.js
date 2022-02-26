@@ -23,7 +23,7 @@ export default function (Vue, { router }) {
   Vue.component("MdiIcon", MdiIcon);
   Vue.component("Hover", Hover);
   // Set default layout as a global component
-  Vue.component("Layout", DefaultLayout);
+  Vue.component("PageLayout", DefaultLayout);
   Vue.component("PageSection", PageSection);
 
   Vue.filter("capitalize", capitalizeFilter);

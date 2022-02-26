@@ -22,7 +22,7 @@
         &copy; Kendall Roth {{ new Date().getFullYear() }}
       </div>
       <div class="footer__info__developer">
-        Made with <MdiIcon :icon="icons.mdiHeart" class="has-text-love mx-xs" />
+        Made with <mdi-icon :icon="icons.mdiHeart" class="has-text-love mx-xs" />
         from scratch using&nbsp;
         <a
           class="has-text-gridsome"
@@ -36,7 +36,7 @@
       <div class="footer__version">
         <span class="footer__version__number">v{{ version }}</span>
         <span v-if="gitCommit || true" class="footer__version__commit">
-          &ensp;@&ensp;{{ gitCommit || "c92ka9e" }}
+          &ensp;@&ensp;{{ gitCommit || "N/A" }}
         </span>
       </div>
     </div>
@@ -124,7 +124,6 @@ $footer-icon-size: 48px;
 
   &:hover {
     background-color: $color-grey-dark;
-    font-weight: 500;
   }
 }
 

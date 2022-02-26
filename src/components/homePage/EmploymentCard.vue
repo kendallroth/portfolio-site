@@ -17,12 +17,12 @@
               target="_blank"
               @click.stop
             >
-              <MdiIcon :icon="icons.mdiLink" />
+              <mdi-icon :icon="icons.mdiLink" />
             </a>
           </div>
           <div class="employment-card__header__position">
             {{ job.position }}
-            <span class="employment-card__header__types">
+            <span v-if="jobTypes" class="employment-card__header__types">
               ({{ jobTypes }})
             </span>
           </div>
@@ -36,7 +36,7 @@
           </div>
         </div>
       </div>
-      <MdiIcon
+      <mdi-icon
         v-if="!placeholder"
         :class="{ 'is-active': isShown }"
         :icon="icons.mdiChevronUp"

@@ -1,5 +1,5 @@
 <template>
-  <Layout :headerOffset="false" :includeFooter="false">
+  <page-layout :headerOffset="false" :includeFooter="false">
     <Hero>
       <div class="page-not-found">
         <h2 class="page-not-found__title mb-md">404</h2>
@@ -14,7 +14,7 @@
         </g-link>
       </div>
     </Hero>
-  </Layout>
+  </page-layout>
 </template>
 
 <script>

@@ -1,7 +1,7 @@
 <template>
   <div :class="{ 'is-primary': primary }" class="about-card card">
     <div class="about-card__header elevation-2">
-      <MdiIcon :icon="icons[icon]" class="about-card__icon" />
+      <mdi-icon :icon="icons[icon]" class="about-card__icon" />
       <div class="about-card__titles">
         <h2 class="about-card__title">
           {{ title }}

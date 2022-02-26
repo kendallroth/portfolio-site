@@ -1,8 +1,8 @@
 <template>
-  <Layout>
-    <PageSection class="py-lg" size="sm-10 md-8">
+  <page-layout>
+    <page-section class="py-lg" size="sm-10 md-8">
       <div class="about-cards">
-        <AboutCard
+        <about-card
           v-for="(card, idx) in aboutCards"
           :key="card.title"
           :caption="card.caption"
@@ -12,8 +12,8 @@
           :title="card.title"
         />
       </div>
-    </PageSection>
-  </Layout>
+    </page-section>
+  </page-layout>
 </template>
 
 <page-query>
