@@ -7,8 +7,8 @@ function slugify(text) {
     .toString()
     .toLowerCase()
     .replace(/\s+/g, "-") // Replace spaces with -
-    .replace(/[^\w\-]+/g, "") // Remove all non-word chars
-    .replace(/\-\-+/g, "-") // Replace multiple - with single -
+    .replace(/[^\w-]+/g, "") // Remove all non-word chars
+    .replace(/--+/g, "-") // Replace multiple - with single -
     .replace(/^-+/, "") // Trim - from start of text
     .replace(/-+$/, ""); // Trim - from end of text
 }
@@ -16,7 +16,7 @@ function slugify(text) {
 module.exports = function (api) {
   api.loadSource(({ addMetadata }) => {
     addMetadata("site", siteMetadata);
-    addMetadata("gitCommit", process.env.COMMIT_REF ?? null);
+    addMetadata("gitCommit", process.env.COMMIT_REF ?? "N/A");
   });
 
   api.loadSource((actions) => {

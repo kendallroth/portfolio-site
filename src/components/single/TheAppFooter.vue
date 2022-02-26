@@ -35,8 +35,8 @@
       </div>
       <div class="footer__version">
         <span class="footer__version__number">v{{ version }}</span>
-        <span v-if="gitCommit || true" class="footer__version__commit">
-          &ensp;@&ensp;{{ gitCommit || "N/A" }}
+        <span v-if="gitCommit" class="footer__version__commit">
+          &ensp;@&ensp;{{ gitCommit }}
         </span>
       </div>
     </div>
@@ -46,6 +46,7 @@
 <static-query>
 query {
   metadata {
+    gitCommit
     site {
       contactEmail
       siteName
