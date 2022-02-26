@@ -16,6 +16,7 @@ function slugify(text) {
 module.exports = function (api) {
   api.loadSource(({ addMetadata }) => {
     addMetadata("site", siteMetadata);
+    addMetadata("gitCommit", process.env.COMMIT_REF ?? null);
   });
 
   api.loadSource((actions) => {

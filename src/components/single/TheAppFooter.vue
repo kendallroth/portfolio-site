@@ -86,7 +86,7 @@ export default {
       return this.$static.metadata.site.contactEmail;
     },
     gitCommit() {
-      return config.gitCommit;
+      return this.$static.metadata.gitCommit;
     },
     version() {
       return config.version;
